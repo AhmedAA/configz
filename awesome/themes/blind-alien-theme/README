@@ -1,0 +1,15 @@
+
+Blind-Alien Theme for Awesome 3.4.10
+
+INSTALLATION:
+
+1. Copy the rc.lua to your awesome configuration folder, probably "~/.config/awesome/"
+
+2. Copy the theme files and icon folders to "/usr/share/awesome/themes/blind-alien/"
+
+3. If you want the MPD Play, Pause, Prev, Next buttons to force update the MPD widget after being pressed, copy launcher.lua to "/usr/share/awesome/lib/awful/widget/". If you don't want that you may have to disable these features in rc.lua.
+
+4. If you want to be able to disable the application icons in your tasklist and align the tasklist_floating_icon icon on the left (next to the task-name) instead of on the right, then copy tasklist.lua to "/usr/share/awesome/lib/awful/widget/". If you don't want that you may have to disable these features in rc.lua.
+
+5. Enable/Disable any widgets you like and modify their parameters in rc.lua beginning at line 25. (Don't forget to modify the wiboxes too!)
+
