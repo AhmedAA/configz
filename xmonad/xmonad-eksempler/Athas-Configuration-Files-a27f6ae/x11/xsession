@@ -1,0 +1,23 @@
+#!/bin/sh
+# .xinitrc for Troels Henriksen <athas@sigkill.dk>
+
+xrdb ~/.Xdefaults
+
+# Accept all connections from the local machine.
+xhost +local:
+
+# Disable bell.
+xset b off
+
+# Set up keyboard
+setxkbmap dk -option ctrl:nocaps
+
+# Start GNU Emacs and redirect output to a logfile.
+emacs -f on-start &
+
+# Do some stuff to make my Trackman work properly (I'm not sure how
+# this works - it's pure magic.).
+xset m 4 25 &
+
+# Start a window-manager.
+xmonad 2> ~/.xmonad.out

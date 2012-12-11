@@ -1,0 +1,13 @@
+#!/bin/bash
+# Filename: ~/.xmonad/conkyxmobar
+
+# Executes conky in a loop, redirecting output to a text file. I've chosen
+# this method because single interval instances will always result in
+# network speeds being 0.0kbs; only after the first interval are network
+# speeds reported accurately.
+#
+# Add script to ~/.xinitrc or similar session script; xmobarrc does the rest.
+
+conky -c ~/.xmonad/conkyrc-xmobar | while read line; do 
+    echo -n "$line" > ~/.xmonad/conkystats;
+done

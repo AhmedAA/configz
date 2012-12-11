@@ -1,0 +1,179 @@
+-- imports {{{
+import XMonad hiding ( (|||) ) -- don't import the ||| operator, it comes in layoutcombinators
+import XMonad.ManageHook
+import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.ManageDocks
+ --hopefully making matlab run
+import XMonad.Hooks.SetWMName
+import XMonad.Hooks.EwmhDesktops
+import XMonad.Hooks.UrgencyHook
+import XMonad.Util.Run
+import XMonad.Util.Dmenu
+import XMonad.Layout.NoBorders
+import XMonad.Layout.ResizableTile
+import XMonad.Layout.HintedTile
+import XMonad.Layout.Grid
+import XMonad.Layout.Magnifier
+import XMonad.Layout.LayoutHints
+import XMonad.Layout.IM
+import XMonad.Layout.PerWorkspace
+import XMonad.Layout.Reflect
+import XMonad.Layout.LayoutCombinators
+import XMonad.Layout.Named
+import XMonad.Layout hiding ( (|||) )
+import XMonad.Prompt
+import XMonad.Prompt.Shell
+import XMonad.Core
+import XMonad.Actions.NoBorders
+import qualified XMonad.StackSet as W
+import qualified Data.Map as M
+
+-- }}}
+
+-- hooks {{{
+myManageHook = composeAll
+    [ (role =? "gimp-toolbox" <||> role =? "gimp-image-window" <||> role =? "gimp-dock") --> (ask >>= doF . W.sink)
+	, className =? "Gimp" --> doF (W.shift "img")
+    , className =? "Pidgin" --> doF (W.shift "IM") --find out how to combine both pidgin actions
+    , className =? "Pidgin" --> doF (W.swapDown)
+    , className =? "Shiretoko" --> doF (W.shift "web")
+    , className =? "pcmanfm" --> doF (W.shift "fm")
+    , (className =? "pcmanfm" <||> className =? "Pcmanfm") --> doF (W.shift "fm")
+    , (className =? "amarok" <||> className =? "Amarok") --> doF (W.shift "laut")
+	]
+    where role = stringProperty "WM_WINDOW_ROLE"
+
+newManageHook = manageDocks <+> myManageHook <+> manageHook defaultConfig
+
+myUrgencyHook = withUrgencyHook dzenUrgencyHook
+    { args = ["-bg", myBgColor, "-fg", "'#FF0000'"] } 
+
+myLayoutHook = onWorkspace "IM" (avoidStruts ( imlayout )) $
+               onWorkspace "img" (avoidStruts ( gimp )) $
+               named "myTall" (myLayoutMods( tiled )) |||
+               named "myMirrorTall" (myLayoutMods( Mirror tiled )) |||
+               named "MyMagnifyTall" (myLayoutMods( magnify tiled )) |||
+               named "myFull" (avoidStruts(layoutHints(smartBorders( Full ))))
+    where 
+      tiled = ResizableTall nmaster delta ratio []
+      imlayout = withIM (0.135) (Role "buddy_list") Grid 
+      gimp = withIM (0.15) (Role "gimp-toolbox") $
+             reflectHoriz $
+             withIM (0.2) (Role "gimp-dock") (ResizableTall 3 delta ratio [])
+      nmaster = 1
+      delta = 3/100
+      ratio = 1/2
+      magnify = magnifiercz (1.2)
+      myLayoutMods x = (avoidStruts(layoutHints(smartBorders( x ))))
+--}}}
+
+-- defines {{{
+myModMask = mod4Mask
+myFont = "'-*-terminus-*-r-normal-*-*-120-*-*-*-*-iso8859-*'"
+myFocusedBorderColor = "#CAFF42"
+myNormalBorderColor = "#333"
+myBgColor = "'#1A1A1A'"
+myFgColor = "'#777777'"
+myFontColor = "'#6b6382'"
+mySelColor = "'#caff42'"
+mySelFontColor = "'#000000'"
+myPanelHeight = "16"
+myPanelY = "0"
+myTerminal = "urxvtc"
+
+myMainPanelWidth = "500"
+myConkyPanelWidth = "670"
+myTrayerWidth = "110"
+myTrayerMargin = "1170" --mainpanel + conkypanel
+
+myTrayerCmd = "trayer --edge top --align left --margin " ++ myTrayerMargin ++" --widthtype pixel --height " ++ myPanelHeight ++ " --width " ++ myTrayerWidth ++ " --transparent true --alpha 0 --tint 0x1A1A1A"
+myDzenFlags = " -bg " ++ myBgColor ++ " -fg " ++ myFontColor ++ " -h " ++ myPanelHeight ++ " -fn " ++ myFont ++ " -sa c -e 'onstart=lower' -y " ++ myPanelY ++ " -xs 0 "
+statusBarCmd = "dzen2 " ++ myDzenFlags ++ " -w " ++ myMainPanelWidth ++ " -ta l " 
+secondBarCmd = "conky-cli | dzen2 " ++ myDzenFlags ++ " -w " ++ myConkyPanelWidth ++ " -x " ++ myMainPanelWidth ++ " -ta r "
+myDmenuString = "dmenu_run -fn " ++ myFont ++ " -nb " ++ myBgColor ++ " -nf " ++ myFontColor ++ " -sb " ++ mySelColor ++ " -sf " ++ mySelFontColor
+-- }}}
+
+-- The prompt config {{{
+myPromptConfig :: XPConfig
+myPromptConfig = defaultXPConfig
+    { position          = Top
+    , promptBorderWidth = 0
+    , font              = myFont 
+    , height            = 16
+    , bgColor           = "#2A2733"
+    , fgColor           = "#AA9DCF"
+    , bgHLight          = "#6B6382"
+    , fgHLight          = "#4A4459"
+    }
+-- }}}
+
+-- the keys config {{{
+myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
+    [ ((myModMask, xK_p), spawn myDmenuString)
+    , ((mod4Mask, xK_b), sendMessage ToggleStruts)
+    , ((mod4Mask, xK_y), sendMessage MirrorShrink) --resizableTall keys
+    , ((mod4Mask, xK_a), sendMessage MirrorExpand)
+    , ((mod4Mask .|. shiftMask, xK_l), spawn ("xlock"))
+    , ((mod4Mask .|. shiftMask, xK_x), spawn ("alock -auth pam"))
+    , ((mod4Mask .|. shiftMask, xK_e), spawn ("pcmanfm"))
+    , ((mod4Mask .|. shiftMask, xK_f), spawn ("firefox"))
+    , ((mod4Mask .|. shiftMask, xK_a), spawn ("amarok"))
+    , ((mod4Mask .|. shiftMask, xK_g), spawn ("gimp"))
+    , ((mod4Mask .|. shiftMask, xK_p), spawn ("pidgin"))
+    , ((mod4Mask, xK_F1), (sendMessage $ JumpToLayout "myTall"))
+    , ((mod4Mask, xK_F2), (sendMessage $ JumpToLayout "myMirrorTall"))
+    , ((mod4Mask, xK_F3), (sendMessage $ JumpToLayout "MyMagnifyTall"))
+    , ((mod4Mask, xK_F4), (sendMessage $ JumpToLayout "myFull"))
+    , ((mod4Mask, xK_g), withFocused toggleBorder)
+    , ((mod4Mask, xK_o), shellPrompt myPromptConfig) --locks up xmonad sometimes for no apparent reason
+    ]
+-- }}}
+    
+-- the PP config {{{
+myPP :: PP
+myPP = dzenPP
+    { ppCurrent         = dzenColor "#4A4459" "#CAFF42" . \wsId -> if (':' `elem` wsId) then drop 2 wsId else wsId    -- If the workspace name contains a ':' then drop the first 2 characters of the name 
+    , ppVisible         = dzenColor "#8B80A8" ""
+    , ppHidden          = dzenColor "#6B6382" "" . \wsId -> if (':' `elem` wsId) then drop 2 wsId else wsId
+    , ppHiddenNoWindows = dzenColor "#4A4459" "" . \wsId -> if (':' `elem` wsId) then drop 2 wsId else wsId
+    , ppLayout          = dzenColor "#6B6382" "" .
+                          (\ x -> fill (case x of
+                              "myTall"          -> "Tall" ++ setFgColor ++ " ^i(/home/corrupt/.xmonad/images/tall.xbm)"
+                              "myMirrorTall"    -> "MirrorTall" ++ setFgColor ++ " ^i(/home/corrupt/.xmonad/images/mtall.xbm)"
+                              "myFull"          -> "Full" ++ setFgColor ++ " ^i(/home/corrupt/.xmonad/images/full.xbm)"
+                              "MyMagnifyTall"   -> "MagnifyTall" ++ setFgColor ++ " ^i(/home/corrupt/.xmonad/images/magnify.xbm)"
+                              "IM Grid"         -> x ++ setFgColor ++ " ^i(/home/corrupt/.xmonad/images/im.xbm)"
+                              "IM ReflectX IM ResizableTall"    -> "Gimp Grid" ++ setFgColor ++ " ^i(/home/corrupt/.xmonad/images/gimp.xbm)"
+                              _                                 -> pad x) 4)
+    , ppSep             = " | "
+    , ppWsSep           = " "
+    , ppTitle           = dzenColor "#AA9DCF" "". shorten 500 . dzenEscape
+    }
+    where
+      setFgColor = "^fg(" ++ myFocusedBorderColor ++ ")"
+      fill :: String -> Int -> String
+      fill h i = "^p(" ++ show i ++ ")" ++ h ++ "^p(" ++ show i ++ ")"
+-- }}}
+
+main = do
+     din <- spawnPipe statusBarCmd
+     secondBar <- spawnPipe secondBarCmd
+     spawn myTrayerCmd
+     xmonad $ myUrgencyHook
+            $ defaultConfig
+        { manageHook = newManageHook 
+		, layoutHook = myLayoutHook
+        , startupHook = setWMName "LG3D"
+		, focusedBorderColor =myFocusedBorderColor
+		, normalBorderColor = "#1A1A1A" --doesn't work if I set myBgColor here
+        , borderWidth = 2
+		, workspaces = [" main", "web", "fm", "IM", "img", "laut"] ++ map show [7 .. 8 :: Int]
+		, modMask = myModMask
+        , keys = \c -> myKeys c `M.union` keys defaultConfig c
+        , logHook = ewmhDesktopsLogHook >> setWMName "LG3D" >> (dynamicLogWithPP $ myPP
+                    { ppOutput = hPutStrLn din
+                    })
+		, terminal = myTerminal
+	 }
+
+-- vim: fdm=marker ts=4 sw=4 sts=4 et:

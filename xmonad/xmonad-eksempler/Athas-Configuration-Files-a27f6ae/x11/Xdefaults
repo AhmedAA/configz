@@ -1,0 +1,65 @@
+! Set a default, standard font.
+*Font: -bitstream-bitstream vera sans mono-medium-r-normal--0-0-0-0-m-0-iso8859-15
+
+! Zenburn color-scheme
+*background:  #3f3f3f
+*foreground:  #dcdccc
+! black + red
+!*color0:     #3f3f3f
+*color0:      #1E2320
+*color1:      #705050
+! green + yellow
+*color2:      #60b48a
+*color3:      #dfaf8f
+! blue + purple
+*color4:      #506070
+*color5:      #dc8cc3
+! cyan + white
+*color6:      #8cd0d3
+*color7:      #dcdccc
+! bright-black + bright-red
+*color8:      #709080
+*color9:      #dca3a3
+! bright-green + bright-yellow
+*color10:     #c3bf9f
+*color11:     #f0dfaf
+! bright-blue + bright-purple
+*color12:     #94bff3
+*color13:     #ec93d3
+! bright-cyan + bright-white
+*color14:     #93e0e3
+*color15:     #ffffff
+
+! Emacs
+Emacs*Font: -bitstream-terminal-medium-r-*-*-18-140-*-*-*-*-*-*
+Emacs*Foreground:	light grey
+Emacs*Background:	black
+
+! URxvt
+
+URxvt*font: xft:Bitstream Vera Sans Mono:autohint=true
+URxvt*scrollStyle: plain
+URxvt*scrollBar: False
+URxvt*scrollColor: black
+URxvt*saveLines: 60000
+URxvt.color12: LightSlateBlue
+URxvt.underlineURLs: true
+URxvt.urlLauncher: /home/athas/bin/surf
+
+! xmessage
+
+.xmessage.form.okay.background:		#333333
+.xmessage.form.okay.foreground:		snow
+.xmessage.message.font:			-*-proggyclean-*-*-*-*-*-*-*-*-*-*-*-*
+.xmessage.message.background:		#333333
+.xmessage.form.background:		#333333
+.xmessage.defaultButton:		okay
+.Xmessage.form.message.Scroll:		WhenNeeded
+
+Sindre*font: Monospace-6.5
+Sindre*background: #3f3f3f
+Sindre*foreground: #dcdccc
+Sindre*focusBackground: #4f4f4f
+Sindre*focusForeground: #8cd0d3
+gsmenu*focusBackground: #faff69
+gsmenu*focusForeground: #000000

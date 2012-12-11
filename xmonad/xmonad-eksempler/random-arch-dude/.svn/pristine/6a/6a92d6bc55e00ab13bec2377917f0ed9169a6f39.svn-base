@@ -1,0 +1,1 @@
+conky | dzen2 -bg '#1a1a1a' -fg '#777777' -h 16 -w 790 -sa c -e '' -fn '-*-terminus-*-r-normal-*-*-120-*-*-*-*-iso8859-*' -x 400 -y 784 -ta r -e 'onstart=lower'

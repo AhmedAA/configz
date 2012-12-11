@@ -1,0 +1,9 @@
+xmonad.errors
+xmonad.log
+xmonad.state
+xmonad-*
+*.o
+*.hi
+lib/XMonad/Stack/*.o
+lib/XMonad/Stack/*.hi
+

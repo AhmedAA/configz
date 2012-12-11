@@ -1,0 +1,16 @@
+# ~/.conkyrc
+# Thayer Williams - http://cinderwick.ca
+
+background no
+out_to_x no
+out_to_console yes
+update_interval 3
+total_run_times 0
+use_spacer none
+
+TEXT
+<fc=\#999999>${hwmon temp 1}°</fc> | \
+<fc=\#888888>${cpu total}%</fc> | \
+<fc=\#666666>${mem}</fc> | \
+<fc=\#91b8ff>${if_existing /sys/class/power_supply/BAT0/present}BAT ${battery_percent BAT0}% (${battery_time BAT0})${else}AC${endif}</fc> | \
+${wireless_essid wlan0} <fc=\#d94c3d>${upspeedf wlan0} k</fc>  <fc=\#a4bc51>${downspeedf wlan0} k</fc>\

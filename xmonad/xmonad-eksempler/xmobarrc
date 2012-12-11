@@ -1,0 +1,9 @@
+Config { font = "-Misc-Fixed-Normal-R-Normal--13-120-75-75-C-70-ISO8859-1"
+       , bgColor = "#000000"
+       , fgColor = "grey"
+       , position = Top
+       , commands = [ Run StdinReader
+                 , Run Com "cat" ["~/.xmonad/conkystats"] "conky" 30 
+                 , Run Com "date" ["+%A\\\\ %d\\\\ %B\\\\ %T"] "" 10 ]
+       , template = "%StdinReader% }{ %conky% | %date%"
+       }
