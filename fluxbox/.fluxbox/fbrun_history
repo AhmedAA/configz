@@ -1,0 +1,190 @@
+eg killall xcompmfirefox
+macs --daemon
+nm-applet
+killall xcompmgr
+xcompmgr -c
+emacs
+mp
+emacs
+evince
+emacs --daemon
+nm-applet
+killall xcompmgr
+xcompmgr -c
+firefox
+opboxd
+t
+gimp
+emacs
+evince
+emacs --daemon
+nm-applet
+killall xcompmgr
+xcompmgr -c
+evince
+daemon
+nm-applet
+killall xcompmgr
+xcompmgr -c
+emacs
+mp
+emacs
+evince
+emacs --daemon
+nm-applet
+killall xcompmgr
+xcompmgr -c
+firefox
+opboxd
+t
+gimp
+emacs
+evince
+emacs --daemon
+nm-applet
+killall xcompmgr
+xcompmgr -c
+pcmanfm
+session-dialog.sh
+firefox
+ompmgr
+xcompmgr -c
+firefox
+opboxd
+t
+gimp
+emacs
+evince
+emacs --daemon
+nm-applet
+killall xcompmgr
+xcompmgr -c
+pcmanfm
+session-dialog.sh
+evincw
+evince
+pmgr
+xcompmgr -c
+pcmanfm
+session-dialog.sh
+evincw
+pcmanfm
+compmgr
+xcompmgr -c
+firefox
+opboxd
+t
+gimp
+emacs
+evince
+emacs --daemon
+nm-applet
+killall xcompmgr
+xcompmgr -c
+evince
+daemon
+nm-applet
+killall xcompmgr
+xcompmgr -c
+emacs
+mp
+emacs
+evince
+emacs --daemon
+nm-applet
+killall xcompmgr
+xcompmgr -c
+firefox
+opboxd
+t
+gimp
+emacs
+evince
+emacs --daemon
+nm-applet
+killall xcompmgr
+xcompmgr -c
+pcmanfm
+firefox
+macs --daemon
+nm-applet
+killall xcompmgr
+xcompmgr -c
+emacs
+mp
+emacs
+evince
+emacs --daemon
+nm-applet
+killall xcompmgr
+xcompmgr -c
+firefox
+opboxd
+t
+gimp
+emacs
+evince
+emacs --daemon
+nm-applet
+killall xcompmgr
+xcompmgr -c
+evince
+daemon
+nm-applet
+killall xcompmgr
+xcompmgr -c
+emacs
+mp
+emacs
+evince
+emacs --daemon
+nm-applet
+killall xcompmgr
+xcompmgr -c
+firefox
+opboxd
+t
+gimp
+emacs
+evince
+emacs --daemon
+nm-applet
+killall xcompmgr
+xcompmgr -c
+pcmanfm
+session-dialog.sh
+firefox
+ompmgr
+xcompmgr -c
+firefox
+opboxd
+t
+gimp
+emacs
+evince
+emacs --daemon
+nm-applet
+killall xcompmgr
+xcompmgr -c
+pcmanfm
+session-dialog.sh
+evincw
+evince
+pmgr
+xcompmgr -c
+pcmanfm
+session-dialog.sh
+evincw
+emacs
+-dialog.sh
+evincw
+evince
+pmgr
+xcompmgr -c
+pcmanfm
+session-dialog.sh
+evincw
+nm-applet
+nfm
+session-dialog.sh
+evincw

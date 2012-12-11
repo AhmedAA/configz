@@ -1,0 +1,41 @@
+#
+# ~/.bashrc
+#
+
+export EDITOR="emacsclient -t"
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# xlock matrix stuff
+alias xlock='xlock -mode matrix -font fixed'
+
+## Standard PS1
+#PS1='[\u@\h \W]\$ '
+
+## My PS1
+PS1='\[\033[01;32m\][\t \u@\h\[\033[01;34m\] \w]$\[\033[00m\] ' 
+
+## aliases for different ls and grep
+alias ls='ls --color=auto'
+alias ll='ls -l'
+alias la='ls -a'
+alias l='ls -CF'
+
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+## emacs aliases
+#alias emacs='emacs -nw'
+alias emacs='emacsclient -t'
+
+## screen aliases, xp = projector, xs = screen
+## Skift i xmonad med: mod-w, mod-e, mod-r. xp er for projektor på
+## DIKU, xs er for 19" skærm hjemme.
+alias xp='xrandr --output LVDS --primary --mode 1366x768 --output VGA-0 --mode 1024x768 --right-of LVDS'
+alias xs='xrandr --output LVDS --primary --mode 1366x768 --output VGA-0 --mode 1440x900 --above LVDS'
+alias xh='xrandr --output LVDS --primary --mode 1366x768 --output LVDS'
+
+## mosml
+export PATH="${PATH}:/opt/mosml/bin"

@@ -1,0 +1,122 @@
+set encoding=utf-8
+set nocompatible
+
+""" Vundle
+    filetype off
+
+    set rtp+=~/.vim/bundle/vundle/
+    call vundle#rc()
+
+    "Bundle 'Command-T'
+    Bundle 'ctrlp.vim'
+    Bundle 'delimitMate.vim'
+    Bundle 'molokai'
+    Bundle 'snipMate'
+    Bundle 'snipmate-snippets'
+    Bundle 'svndiff'
+    Bundle 'fugitive.vim'
+    Bundle 'The-NERD-Commenter'
+    Bundle 'The-NERD-tree'
+    Bundle 'ZenCoding.vim'
+    Bundle 'Syntastic'
+    Bundle 'LaTeX-Box'
+    Bundle 'vim-coffee-script'
+    Bundle 'EasyMotion'
+    Bundle 'Buffergator'
+
+    filetype plugin indent on
+""" /Vundle
+
+" svndiff auto
+"autocmd BufCreate * call Svndiff("next")
+let g:svndiff_autoupdate = 1
+
+let g:Powerline_symbols = 'fancy'
+
+let g:syntastic_enable_ballons = 0
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_loc_list_height = 5
+let g:syntastic_echo_current_error = 1
+let g:syntastic_quiet_warnings=1
+
+au FileType python set ft=python.django " For SnipMate
+
+""" General config
+    let mapleader = ","
+    syntax enable
+    set t_Co=256
+    colorscheme molokai
+    let g:molokai_original = 1
+    set background=dark
+    set number
+    set cursorcolumn            " Where on the current line are we?
+    set cursorline              " Where in the file are we?
+    set showmatch
+    set tabstop=4       " Tabs should only be 4 spaces!
+    set shiftwidth=4
+    set expandtab       " ONLY spaces!
+    set softtabstop=4
+    set colorcolumn=+2  " Color the 80'th character column
+    set textwidth=79
+    set wrapmargin=79
+    set wrap
+    set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅
+    set wildignore=*.sw*,*.pyc,*.o,*.jpg,*.png,*.gif
+    set so=999 " Keep current line vertically centered
+
+    " Statusline
+    set laststatus=2            " always show the status line
+    "set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
+    "              | | | | |  |   |      |  |     |    |
+    "              | | | | |  |   |      |  |     |    + current 
+    "              | | | | |  |   |      |  |     |       column
+    "              | | | | |  |   |      |  |     +-- current line
+    "              | | | | |  |   |      |  +-- current % into file
+    "              | | | | |  |   |      +-- current syntax in 
+    "              | | | | |  |   |          square brackets
+    "              | | | | |  |   +-- current fileformat
+    "              | | | | |  +-- number of lines
+    "              | | | | +-- preview flag in square brackets
+    "              | | | +-- help flag in square brackets
+    "              | | +-- readonly flag in square brackets
+    "              | +-- rodified flag in square brackets
+    "              +-- full path to file in the buffer
+""" /General config
+
+
+" Viewport Controls
+" ie moving between split panes
+    map <silent><Leader>h <C-w>h
+    map <silent><Leader>j <C-w>j
+    map <silent><Leader>k <C-w>k
+    map <silent><Leader>l <C-w>l
+
+""" Command-T
+
+""" /Command-T
+
+
+""" The_NERD_Tree
+    let NERDTreeChDirMode=2
+    let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
+    let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
+    let NERDTreeShowBookmarks=1
+    map <F3> :NERDTreeToggle<CR>
+""" /The_NERD_Tree
+
+
+""" Gundo
+    nnoremap <F5> :GundoToggle<CR>
+""" /Gundo
+
+
+""" Zencoding
+    let g:user_zen_settings = {'indentation' : '    '}
+""" /Zencoding
+
+
+" Some tweaks for better life
+    command! -bar -bang W :w<bang>  " :W happens all the time!
+    command! -bar -bang Q :q<bang>  " So does :Q
+    command! -bar -bang Tabe :tabe<bang>
+    noremap <F12> :vsplit<CR><C-W><right>:o.<CR>

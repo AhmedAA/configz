@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/yuffie/Documents/hci'
+let g:netrw_dirhist_2='/usr/share/emacs/site-lisp/auctex'
+let g:netrw_dirhist_3='/home/ahmed/.notion'
+let g:netrw_dirhist_4='/home/ahmed/jadmin/dev/aqtash/eventplanner'
+let g:netrw_dirhist_5='/home/ahmed/jadmin/dev/aqtash'
+let g:netrw_dirhist_6='/home/ahmed/jadmin/dev/aqtash/convention'
+let g:netrw_dirhist_7='/home/ahmed'
+let g:netrw_dirhist_8='/home/ahmed/.fluxbox'

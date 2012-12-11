@@ -1,0 +1,100 @@
+toolbar: flat vertical gradient
+toolbar.color: rgb:4/4/4
+toolbar.colorTo: rgb:2/2/2
+toolbar.button: parentrelative
+toolbar.button.picColor: white
+toolbar.button.pressed: flat vertical gradient
+toolbar.button.pressed.color: rgb:6/6/6
+toolbar.button.pressed.colorTo: rgb:8/8/8
+toolbar.label: parentrelative
+toolbar.label.textColor: white
+toolbar.windowLabel: parentrelative
+toolbar.windowLabel.textColor: white
+toolbar.clock: parentrelative
+toolbar.clock.textColor: white
+toolbar.justify: center
+toolbar.font: dejavusans-10
+
+toolbar.iconbar.focused: flat vertical gradient
+toolbar.iconbar.focused.color: rgb:5/5/5
+toolbar.iconbar.focused.colorTo: rgb:3/3/3
+toolbar.iconbar.unfocused: parentrelative
+toolbar.iconbar.empty: parentrelative
+
+menu.title: flat vertical gradient
+menu.title.color: rgb:4/4/4
+menu.title.colorTo: rgb:2/2/2
+menu.title.textColor: white
+menu.title.font: dejavusans-10
+menu.title.justify: center
+
+menu.frame: flat vertical gradient
+menu.frame.color: rgb:6/6/6
+menu.frame.colorTo: rgb:4/4/4
+menu.frame.textColor: white
+menu.frame.disableColor: rgb:4/4/4
+menu.frame.font: dejavusans-10
+menu.frame.justify: left
+
+menu.bullet.position: right
+menu.bullet: triangle
+
+menu.hilite: flat vertical gradient
+menu.hilite.color: rgb:e/e/e
+menu.hilite.colorTo: rgb:8/8/8
+menu.hilite.textColor: black
+
+window.title.focus: flat vertical gradient
+window.title.focus.color: rgb:4/4/4
+window.title.focus.colorTo: rgb:2/2/2
+window.title.unfocus: flat vertical gradient
+window.title.unfocus.color: rgb:6/6/6
+window.title.unfocus.colorTo: rgb:4/4/4
+
+window.label.focus: parentrelative
+window.label.focus.textColor: white
+window.label.focus.justify: center
+window.label.unfocus: parentrelative
+window.label.unfocus.textColor: rgb:3/3/3
+window.label.unfocus.justify: center
+
+window.button.focus: parentrelative
+window.button.focus.picColor: white
+window.button.unfocus: parentrelative
+window.button.unfocus.picColor: black
+window.button.pressed: flat vertical gradient
+window.button.pressed.color: rgb:6/6/6
+window.button.pressed.colorTo: rgb:8/8/8
+
+window.handle.focus: flat vertical gradient
+window.handle.focus.color: rgb:4/4/4
+window.handle.focus.colorTo: rgb:4/4/4
+window.handle.unfocus: flat vertical gradient
+window.handle.unfocus.color: rgb:6/6/6
+window.handle.unfocus.colorTo: rgb:6/6/6
+
+window.grip.focus: parentrelative
+window.grip.unfocus: parentrelative
+
+window.frame.focusColor: rgb:4/4/4
+window.frame.unfocusColor: rgb:4/4/4
+
+window.font: dejavusans-10
+window.justify: center
+
+borderColor: rgb:4/4/4
+
+bevelWidth: 2
+borderWidth: 0
+handleWidth: 1
+
+*textColor: white
+*Font: dejavusans-10
+
+background: flat
+background.color: rgb:1/1/1
+
+bbpager.desktop.focus: flat interlaced crossdiagonal gradient
+bbpager.desktop.focus.color: rgb:6/9/c
+bbpager.desktop.focus.colorTo: rgb:3/48/6
+

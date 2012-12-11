@@ -1,0 +1,33 @@
+urxvt*iconFile: /usr/share/icons/Faenza/apps/scalable/gnome-terminal.svg
+
+urxvt*foreground: #eeeeee
+urxvt*background: #000000
+urxvt*scrollBar: false
+urxvt*transparent: true
+urxvt*shading: 30
+!urxvt*font: xft:UnTaza:pixelsize=10
+urxvt*font: xft:Terminus-Regular:pixelsize=9
+urxvt*saveLines: 10000
+
+! True transparency
+!urxvt*background: rgba:1111/1111/1111/dddd
+!urxvt*depth: 32
+
+! Normal
+! blue
+urxvt*color4:    #2255ff
+
+! Light
+! blue
+urxvt*color12:    #2255ff
+
+!Antialiasing
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+!Emacs
+Emacs.font: Terminus-9

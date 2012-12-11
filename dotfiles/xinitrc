@@ -1,0 +1,49 @@
+B#!/bin/zsh
+
+# Set default browser to firefox
+export BROWSER="chromium"
+
+# Set editor to emacs
+export EDITOR="emacs -nw"
+
+# Merge xresources
+xrdb -merge /home/ahmed/.Xresources
+
+# Set danish keyboard layout
+#setxkbmap -layout dk
+
+# Set x cursor to something more... Appropriate
+xsetroot -cursor_name left_ptr
+
+# Let Canto refresh it's feeds (NOTE: Doesn't need an ampersand, the command
+# is a daemon itself)
+#canto-fetch -b
+
+# Start Emacs as a daemon (NOTE: Doesn't need an ampersand, the command is a
+# daemon itself)
+#emacs --daemon
+
+# unclutter to hide the cursor
+#unclutter -idle 2 &
+
+# Start xcompmgr
+xcompmgr -c &
+
+# Start the Dropbox daemon
+/usr/bin/dropboxd &
+
+# Start xfce4 power manager (battery)
+#xfce4-power-manager &
+
+# Start network manager in the tray
+exec ck-launch-session nm-applet &
+
+# Start the sound mixer
+pnmixer &
+
+# Uses feh to set the background
+sh wallpaper.sh &
+
+#exec startfluxbox
+exec ck-launch-session i3
+#exec xmonad.start
