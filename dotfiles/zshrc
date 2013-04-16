@@ -84,3 +84,6 @@ alias xh='xrandr --output LVDS --primary --mode 1366x768 --output VGA-0 --off'
 
 # mosml
 export PATH="${PATH}:/opt/mosml/bin"
+
+# set terminal to xterm for compatibility
+export TERM=xterm
