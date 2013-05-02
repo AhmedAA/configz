@@ -3,18 +3,18 @@ general {
         interval = 5
 }
 
-order += "ipv6"
-order += "disk /"
+#order += "ipv6"
+#order += "disk /"
 order += "run_watch DHCP"
-order += "run_watch VPN"
+#order += "run_watch VPN"
 order += "wireless wlan0"
-order += "ethernet eth0"
+#order += "ethernet eth0"
 order += "battery 0"
 order += "load"
 order += "time"
 
 wireless wlan0 {
-        format_up = "W: (%quality at %essid) %ip"
+        format_up = "W: %essid (%ip)" #(%quality at %essid) %ip"
         format_down = "W: down"
 }
 
@@ -25,11 +25,12 @@ ethernet eth0 {
 }
 
 battery 0 {
+        last_full_capacity = true
         format = "%status %percentage %remaining"
 }
 
 run_watch DHCP {
-        pidfile = "/var/run/dhclient*.pid"
+        pidfile = "/var/run/dhcpcd*.pid"
 }
 
 run_watch VPN {
@@ -37,7 +38,8 @@ run_watch VPN {
 }
 
 time {
-        format = "%Y-%m-%d %H:%M:%S"
+        format = "%Y-%m-%d %H:%M"
+	#:%S"
 }
 
 load {
@@ -45,5 +47,5 @@ load {
 }
 
 disk "/" {
-        format = "%free (or: %percentage_used used, %percentage_used_of_avail used of avail, %percentage_free free, %percentage_avail avail)"
+        format = "%free"
 }

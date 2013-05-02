@@ -18,6 +18,12 @@ font -nil-profont-medium-r-normal--10-100-72-72-c-50-iso8859-1
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# focus follows mouse
+focus_follows_mouse no
+
+# border style
+#new_window 1pixel
+
 # start a terminal
 bindsym $mod+Return exec urxvt #i3-sensible-terminal
 
@@ -83,12 +89,18 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindcode $mod+d focus child
 
+# assign programs to tags
+assign [class="Thunderbird"] 5
+
+# program rules
+for_window [class="Thunderbird" instance="Msgcompose"] floating enable
+
 # switch to workspace
-bindsym $mod+1 workspace 1
+bindsym $mod+1 workspace 1; layout tabbed
 bindsym $mod+2 workspace 2
 bindsym $mod+3 workspace 3
 bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
+bindsym $mod+5 workspace 5; layout tabbed
 #bindsym $mod+6 workspace 6
 #bindsym $mod+7 workspace 7
 #bindsym $mod+8 workspace 8
@@ -109,14 +121,37 @@ bindsym $mod+Shift+percent move container to workspace 5
 
 # reload the configuration file
 bindsym $mod+Shift+C reload
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+R restart
-# exit i3 (logs you out of your X session)
-#bindsym $mod+Shift+E exit
-bindsym Mod1+Control+Delete exit
+
+# audio keys
+bindsym XF86AudioPrev exec mocp --previous
+bindsym XF86AudioPlay exec mocp -G
+bindsym XF86AudioNext exec mocp --next
+
+########## MODES ##########
+# Enable/disable caps mode
+mode "CAPSLOCK" {
+        bindsym Caps_Lock mode "default"
+}
+bindsym Caps_Lock mode "CAPSLOCK"
+
+# Create prompt to different power settings
+mode "Exit (L)ogout, (R)eboot, (P)oweroff, (H)ibernate, (S)uspend" {
+        bindsym $mod+r exec sudo /sbin/shutdown -r now
+        bindsym $mod+l exit
+        bindsym $mod+p exec sudo /sbin/shutdown -h now
+        bindsym $mod+h exec sudo pm-hibernate
+        bindsym $mod+s exec sudo pm-suspend
+
+        # back to normal
+        bindsym Escape mode "default"
+}
+bindsym $mod+Shift+E mode "Exit (L)ogout, (R)eboot, (P)oweroff, (H)ibernate, (S)uspend"
 
 # resize window (you can also use the mouse for that)
-mode "resize" {
+mode "RESIZE" {
         # These bindings trigger as soon as you enter the resize mode
 
         # Pressing left will shrink the window’s width.
@@ -129,24 +164,28 @@ mode "resize" {
         bindsym ae resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        bindsym 113 resize shrink width 10 px or 10 ppt
-        bindsym 116 resize grow height 10 px or 10 ppt
-        bindsym 111 resize shrink height 10 px or 10 ppt
-        bindsym 114 resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Up resize grow height 10 px or 10 ppt
+        bindsym Down resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
-bindsym $mod+r mode "resize"
+bindsym $mod+r mode "RESIZE"
 
 # Lock screen with i3lock
 bindsym Control+Escape exec i3lock -c 000000
 
+# Volume
+bindsym XF86AudioRaiseVolume exec amixer -c 0 set Master 2dB+
+bindsym XF86AudioLowerVolume exec amixer -c 0 set Master 2dB-
+bindsym XF86AudioMute exec amixer -c 0 set Master toggle
+
 # Browse workspaces with arrows
-bindsym Mod1+Control+Left pw
-bindsym Mod1+Control+Right nw
+bindsym Mod1+Control+Left workspace prev
+bindsym Mod1+Control+Right workspace next
 
 # Green colours
 client.focused          #77994B #547628 #EEEEEE
@@ -158,11 +197,11 @@ bar {
         font -nil-profont-medium-r-normal--10-100-72-72-c-50-iso8859-1
         status_command i3status
 
-	colors {
+colors {
             background #000000
             statusline #ffffff
 
-	    focused_workspace #77994B #547628 #EEEEEE
+            focused_workspace #77994B #547628 #EEEEEE
             #focused_workspace  #ffffff #285577
             active_workspace   #ffffff #333333
             inactive_workspace #888888 #222222
