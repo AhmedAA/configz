@@ -94,6 +94,7 @@ assign [class="Thunderbird"] 5
 
 # program rules
 for_window [class="Thunderbird" instance="Msgcompose"] floating enable
+for_window [class="Qt Jambi application"] floating enable
 
 # switch to workspace
 bindsym $mod+1 workspace 1; layout tabbed
