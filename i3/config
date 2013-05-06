@@ -23,6 +23,7 @@ focus_follows_mouse no
 
 # border style
 #new_window 1pixel
+hide_edge_borders both
 
 # start a terminal
 bindsym $mod+Return exec urxvt #i3-sensible-terminal
@@ -89,8 +90,12 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindcode $mod+d focus child
 
+# starting stuffs
+bindsym $mod+Control+f exec urxvt -e finch
+
 # assign programs to tags
 assign [class="Thunderbird"] 5
+assign [class="Firefox"] 1
 
 # program rules
 for_window [class="Thunderbird" instance="Msgcompose"] floating enable
@@ -147,6 +152,7 @@ mode "Exit (L)ogout, (R)eboot, (P)oweroff, (H)ibernate, (S)uspend" {
         bindsym $mod+s exec sudo pm-suspend
 
         # back to normal
+        bindsym Return mode "default"
         bindsym Escape mode "default"
 }
 bindsym $mod+Shift+E mode "Exit (L)ogout, (R)eboot, (P)oweroff, (H)ibernate, (S)uspend"
