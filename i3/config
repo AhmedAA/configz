@@ -136,6 +136,10 @@ bindsym XF86AudioPrev exec mocp --previous
 bindsym XF86AudioPlay exec mocp -G
 bindsym XF86AudioNext exec mocp --next
 
+# screenshot
+bindsym Print exec import -window root /tmp/$(date +%F_%H%M%S_%N).png
+bindsym Mod1+Print exec import -frame /tmp/$(date +%F_%H%M%S_%N).png
+
 ########## MODES ##########
 # Enable/disable caps mode
 mode "CAPSLOCK" {
@@ -144,18 +148,17 @@ mode "CAPSLOCK" {
 bindsym Caps_Lock mode "CAPSLOCK"
 
 # Create prompt to different power settings
-mode "Exit (L)ogout, (R)eboot, (P)oweroff, (H)ibernate, (S)uspend" {
+mode "Exit (L)ogout, (R)eboot, (P)oweroff, (S)uspend" {
         bindsym $mod+r exec sudo /sbin/shutdown -r now
         bindsym $mod+l exit
         bindsym $mod+p exec sudo /sbin/shutdown -h now
-        bindsym $mod+h exec sudo pm-hibernate
         bindsym $mod+s exec sudo pm-suspend
 
         # back to normal
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-bindsym $mod+Shift+E mode "Exit (L)ogout, (R)eboot, (P)oweroff, (H)ibernate, (S)uspend"
+bindsym $mod+Shift+E mode "Exit (L)ogout, (R)eboot, (P)oweroff, (S)uspend"
 
 # resize window (you can also use the mouse for that)
 mode "RESIZE" {
