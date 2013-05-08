@@ -26,7 +26,9 @@ focus_follows_mouse no
 hide_edge_borders both
 
 # start a terminal
-bindsym $mod+Return exec urxvt #i3-sensible-terminal
+#bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec terminology urxvt
+bindsym $mod+Return exec terminology
 
 # kill focused window
 bindsym $mod+Shift+Q kill
