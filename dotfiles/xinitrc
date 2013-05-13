@@ -1,10 +1,13 @@
-B#!/bin/zsh
+BB#!/bin/zsh
 
 # Set default browser to firefox
-export BROWSER="chromium"
+export BROWSER="firefox"
 
-# Set editor to emacs
-export EDITOR="emacs -nw"
+# Set editor to vim
+export EDITOR="emacs"
+
+# java fix
+#wmname LG3D &
 
 # Merge xresources
 xrdb -merge /home/ahmed/.Xresources
@@ -30,20 +33,20 @@ xsetroot -cursor_name left_ptr
 xcompmgr -c &
 
 # Start the Dropbox daemon
-/usr/bin/dropboxd &
-
-# Start xfce4 power manager (battery)
-#xfce4-power-manager &
-
-# Start network manager in the tray
-exec ck-launch-session nm-applet &
-
-# Start the sound mixer
-pnmixer &
+#/usr/bin/dropboxd &
 
 # Uses feh to set the background
-sh wallpaper.sh &
+sh /home/ahmed/.config/wallpaper.sh &
 
-#exec startfluxbox
-exec ck-launch-session i3
-#exec xmonad.start
+exec subtle
+
+#case $1 in
+#i3)
+#	exec i3
+#	;;
+#dwm)
+#	# conky
+#	conky | while read -r; do xsetroot -name "$REPLY"; done &
+#	exec dwm
+#	;;
+#esac

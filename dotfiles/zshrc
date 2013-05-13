@@ -40,7 +40,7 @@ autoload -Uz compinit promptinit
 compinit
 promptinit
 
-source /etc/profile.d/autojump.zsh
+#source /etc/profile.d/autojump.zsh
 
 alias ls='ls --color=auto -F'
 alias la='ls -a'
@@ -51,6 +51,7 @@ alias c="clear"
 alias gemacs='emacs'
 alias ..='cd ..'
 alias emacs='emacs -nw'
+alias packer='packer-color'
 
 # End of lines added by compinstall
 bindkey "\e[1~" beginning-of-line # Home
@@ -85,5 +86,11 @@ alias xh='xrandr --output LVDS --primary --mode 1366x768 --output VGA-0 --off'
 # mosml
 export PATH="${PATH}:/opt/mosml/bin"
 
+# ruby
+export PATH="${PATH}:$(ruby -rubygems -e "puts Gem.user_dir")/bin"
+
 # set terminal to xterm for compatibility
 export TERM=xterm
+
+# clean alias
+alias clean='sudo pacman -Syuq --noconfirm;sudo pacman -Rns $(pacman -Qqtd) --noconfirm;sudo pacman -Sc --noconfirm'
