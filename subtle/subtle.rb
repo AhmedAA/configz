@@ -12,7 +12,7 @@
 # are dependent on the locations specified by +XDG_CONFIG_DIRS+ and
 # +XDG_CONFIG_HOME+.
 #
-
+require "subtle/subtlext"
 #
 # == Options
 #
@@ -389,6 +389,54 @@ grab "W-A-4", :ScreenJump4
 grab "W-A-5", :ScreenJump5
 grab "W-A-6", :ScreenJump6
 grab "W-A-7", :ScreenJump7
+
+# alt tab
+grab "A-Tab" do
+  clients = Subtlext::Client.visible
+
+  clients.last.instance_eval do
+    focus
+    raise
+  end
+end
+
+grab "A-S-Tab" do 
+  clients = Subtlext::Client.visible
+
+  clients.first.instance_eval do                                                 
+    lower                                                                        
+  end
+  clients.first.instance_eval do
+    focus
+  end                                                                            
+end
+
+# switch view with arrows
+grab "W-Right" do
+  vArr = Subtlext::View[:all];
+  cindx = vArr.index(Subtlext::View.current);
+
+  for i in 1..vArr.size do
+    cV = vArr[(i + cindx) % vArr.size];
+    if (!cV.clients.empty? && Subtlext::View.visible.index(cV) == nil) then
+      cV.jump;
+      break;
+    end
+  end
+end
+
+grab "W-Left" do
+  vArr = Subtlext::View[:all].reverse;
+  cindx = vArr.index(Subtlext::View.current);
+
+  for i in 1..vArr.size do
+    cV = vArr[(i + cindx) % vArr.size];
+    if (!cV.clients.empty? && Subtlext::View.visible.index(cV) == nil) then
+      cV.jump;
+      break;
+    end
+  end
+end
 
 # Force reload of config and sublets
 grab "W-C-r", :SubtleReload
