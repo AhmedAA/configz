@@ -96,8 +96,8 @@ set :skip_urgent_warp, false
 #
 
 screen 1 do
-  top    [ :moc_info, :spacer, :center, :views, :center, :tray, :separator, :battery, :separator, :memory, :separator, :wifi, :separator, :clock ]
-  bottom [ :center, :title, :center ]
+  top    [ :views, :spacer, :center, :title, :center, :tray, :separator, :battery, :separator, :memory, :separator, :wifi, :separator, :clock ]
+#  bottom [ :moc_info, :spacer, :center, :title, :center ]
 #  bottom [ :layout, :center, :conky, :center ]
 end
 
@@ -412,7 +412,7 @@ grab "A-S-Tab" do
 end
 
 # switch view with arrows
-grab "W-Right" do
+grab "C-A-Right" do
   vArr = Subtlext::View[:all];
   cindx = vArr.index(Subtlext::View.current);
 
@@ -425,7 +425,7 @@ grab "W-Right" do
   end
 end
 
-grab "W-Left" do
+grab "C-A-Left" do
   vArr = Subtlext::View[:all].reverse;
   cindx = vArr.index(Subtlext::View.current);
 
@@ -744,6 +744,7 @@ end
 
 tag "media" do
   match "gpicview"
+  match "mypaint"
   match :name => "moc"
   match :name => "mplayer"
 end
@@ -1008,5 +1009,4 @@ end
 #
 # http://subforge.org/projects/subtle/wiki/Hooks
 #
-
 # vim:ts=2:bs=2:sw=2:et:fdm=marker
