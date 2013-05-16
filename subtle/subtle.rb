@@ -96,7 +96,7 @@ set :skip_urgent_warp, false
 #
 
 screen 1 do
-  top    [ :views, :spacer, :center, :title, :center, :tray, :separator, :battery, :separator, :memory, :separator, :wifi, :separator, :clock ]
+  top    [ :views, :title, :spacer, :tray, :separator, :battery, :separator, :memory, :separator, :wifi, :separator, :nettraffic, :separator, :clock ]
 #  bottom [ :moc_info, :spacer, :center, :title, :center ]
 #  bottom [ :layout, :center, :conky, :center ]
 end
@@ -149,9 +149,10 @@ style :views do
   style :focus do
     foreground  "#ffffff"
     background	"#1f1f1f"
-    icon        "#ffffff"
-    border_top  "#aadb0f", 2
-    border_bottom "#1f1f1f", 1
+   # icon        "#ffffff"
+    icon        "#aadb0f"
+   # border_top  "#aadb0f", 2
+   # border_bottom "#1f1f1f", 1
   end
 
   # Style for urgent widow titles and views
@@ -529,26 +530,27 @@ grab "W-z", [ :bottom_left,  :bottom_left66,  :bottom_left33  ]
 grab "W-c", [ :bottom_right, :bottom_right66, :bottom_right33 ]
 
 # Exec programs
-grab "W-Return", "urxvt"
+grab "W-Return", "terminology"
 grab "W-S-Return", "urxvt -name devterm"
+grab "W-S-f", "urxvt -e mc -b"
 grab "W-A-c", "urxvt -name finch -e finch"
 grab "W-A-m", "urxvt -name moc -e mocp"
 grab "W-A-S-m", "urxvt -name mplayer"
 grab "W-p", "dmenu_run -sb darkgreen"
-grab "C-A-l", "i3lock -c 000000"
+grab "C-Escape", "i3lock -c 000000"
 
-# launcher
+# selector
 begin
-    require "#{ENV["HOME"]}/.config/subtle/launcher.rb"
+  require "#{ENV["HOME"]}/.config/subtle/selector.rb" 
 
-    # set path
-    Subtle::Contrib::Launcher.paths = [ "/usr/bin", "~/bin" ]
+  # Set font
+  Subtle::Contrib::Selector.font = "xft:termsynu:pixelsize=10:antialias=true" 
 rescue LoadError => error
-     puts error
+  puts error
 end
 
 grab "W-x" do
-    Subtle::Contrib::Launcher.run
+  Subtle::Contrib::Selector.run
 end
 
 # Run Ruby lambdas
@@ -751,6 +753,8 @@ end
 
 tag "games" do 
   match "Steam|hl_linux|hl2_linux"
+  match "Bastion"
+  match "bastion"
   float true
 end
 
