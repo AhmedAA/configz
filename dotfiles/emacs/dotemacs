@@ -7,6 +7,15 @@
 ;;(color-theme-gnome2)
 ;;(color-theme-solarized-dark)
 
+;; So the idea is that you copy/paste this code into your *scratch* buffer,
+;; hit C-j, and you have a working developper edition of el-get.
+;;(url-retrieve
+;; "https://raw.github.com/dimitri/el-get/master/el-get-install.el"
+;; (lambda (s)
+;;   (let (el-get-master-branch)
+;;     (goto-char (point-max))
+;;     (eval-print-last-sexp))))
+
 ;; No blinking cursor!
 (blink-cursor-mode 0)
 
@@ -21,8 +30,15 @@
 
 ;; Show line numbers in the left side of the buffer. Toggle the
 ;; display of line numbers with: M-x linum-mode
-;;(require 'linum)
-;;(global-linum-mode 1)
+(require 'linum)
+(global-linum-mode 1)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(linum-format (quote dynamic))
+ '(safe-local-variable-values (quote ((encoding . utf-8)))))
 
 ;; Set up a different background and foreground colour for line
 ;; numbering (custom-set-faces '(linum ((t (:inherit (shadow default)
@@ -30,7 +46,7 @@
 
 ;; Insert a space between the line number
 ;; and the text buffer in console (no X).
-(setq linum-format "%d ")
+;;(setq linum-format "%d ")
 
 ;; Disable the menu-bar
 (menu-bar-mode -1)
@@ -45,6 +61,7 @@
 ;; make whitespace-mode use “↓” for newline and “→” for tab.
 ;; together with the rest of its defaults
 ;(require 'whitespace)
+
 (autoload 'whitespace-mode "whitespace" "Toggle whitespace visualization." t)
 (setq whitespace-display-mappings
  '(
@@ -58,6 +75,43 @@
    (tab-mark 9 [8594 9] [92 9]) ; tab, →
 ))
 
+;; ido mode (interactive mode)
+(require 'ido)
+(ido-mode t)
+
+;; Package management emacs
+(require 'package)
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+			 ("marmalade" . "http://marmalade-repo.org/packages/")
+			 ("melpa" . "http://melpa.milkbox.net/packages/")))
+
+(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+(unless (require 'el-get nil 'noerror)
+  (with-current-buffer
+      (url-retrieve-synchronously
+       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
+    (let (el-get-master-branch)
+      (goto-char (point-max))
+      (eval-print-last-sexp))))
+(el-get 'sync)
+
+;; flycheck
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
+;; autopair mode
+(require 'autopair)
+(autopair-global-mode) ;; to enable in all buffers
+
+;; jedi (python mode)
+(add-hook 'python-mode-hook 'auto-complete-mode)
+(add-hook 'python-mode-hook 'jedi:ac-setup)
+
+;; Auto-complete mode
+(add-to-list 'load-path "/usr/share/emacs/site-lisp/auto-complete")
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "/usr/share/emacs/site-lisp/auto-complete/ac-dict")
+(ac-config-default)
+
 ;; Haskell mode
 (load "/usr/share/emacs/site-lisp/haskell-mode/haskell-site-file")
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
@@ -69,7 +123,7 @@
 (setq auto-mode-alist (append '(("/*.\.php[345]?$" . php-mode)) auto-mode-alist))
 
 ;; SML mode
-(load "sml-mode/sml-mode-startup.el")
+(require 'sml-mode)
 
 ;; Lua mode
 (setq auto-mode-alist (cons '("\.lua$" . lua-mode) auto-mode-alist))
@@ -91,4 +145,11 @@
 ;; Set column size to 80
 (setq fill-column 80)
 (setq text-mode-hook 'turn-on-auto-fill)
-(setq default-major-mode 'text-mode)
+(setq major-mode 'text-mode)
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
