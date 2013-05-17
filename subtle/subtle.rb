@@ -96,7 +96,7 @@ set :skip_urgent_warp, false
 #
 
 screen 1 do
-  top    [ :views, :title, :spacer, :tray, :separator, :battery, :separator, :memory, :separator, :wifi, :separator, :nettraffic, :separator, :clock ]
+  top    [ :views, :separator, :layout, :separator, :spacer, :center, :title, :center, :tray, :separator, :battery, :separator, :memory, :separator, :wifi, :separator, :nettraffic, :separator, :volume, :separator, :clock ]
 #  bottom [ :moc_info, :spacer, :center, :title, :center ]
 #  bottom [ :layout, :center, :conky, :center ]
 end
@@ -133,7 +133,7 @@ style :all do
   icon          "#111111"
   #border_right  "#111111", 1 
   padding       3, 3, 3, 3
-  font          "xft:termsynu:pixelsize=10"
+  font          "xft:termsynu:pixelsize=9"
 end
 
 # Style for the all views
@@ -143,22 +143,23 @@ style :views do
   border_top    "#111111", 2
   border_bottom "#111111", 1
 #  border_left   "#111111", 2
-  icon			"#3f3f3f"
+  icon          "#3f3f3f"
 
   # Style for the active views
   style :focus do
-    foreground  "#ffffff"
+   # foreground  "#ffffff"
+    Foreground  "#00FF00"
     background	"#1f1f1f"
    # icon        "#ffffff"
-    icon        "#aadb0f"
+    icon        "#00FF00"
    # border_top  "#aadb0f", 2
    # border_bottom "#1f1f1f", 1
   end
 
   # Style for urgent widow titles and views
   style :urgent do
-    foreground  "#ff9800"
-    icon "#ff9800"
+    foreground  "#ff0000"
+    icon "#ff0000"
   end
 
   # Style for occupied views (views with clients)
@@ -449,9 +450,14 @@ grab "W-C-S-r", :SubtleRestart
 grab "W-C-q", :SubtleQuit
 
 # volume
-grab "XF86AudioRaiseVolume", "amixer -c 0 set Master 2dB+"
-grab "XF86AudioLowerVolume", "amixer -c 0 set Master 2dB-"
-grab "XF86AudioMute", "amixer -c 0 set Master toggle"
+# Direct control
+#grab "XF86AudioRaiseVolume", "amixer -c 0 set Master 2dB+"
+#grab "XF86AudioLowerVolume", "amixer -c 0 set Master 2dB-"
+#grab "XF86AudioMute", "amixer -c 0 set Master toggle"
+# Control through volume sublet
+grab "XF86AudioRaiseVolume", :VolumeRaise
+grab "XF86AudioLowerVolume", :VolumeLower
+grab "XF86AudioMute", :VolumeToggle
 
 # moc
 grab "XF86AudioPrev", "mocp --previous"
@@ -525,8 +531,7 @@ grab "W-d", [ :right,        :right66,        :right33        ]
 #
 # QWERTY
 grab "W-z", [ :bottom_left,  :bottom_left66,  :bottom_left33  ]
-#
-#grab "W-x", [ :bottom,       :bottom66,       :bottom33       ]
+grab "W-x", [ :bottom,       :bottom66,       :bottom33       ]
 grab "W-c", [ :bottom_right, :bottom_right66, :bottom_right33 ]
 
 # Exec programs
@@ -544,14 +549,20 @@ begin
   require "#{ENV["HOME"]}/.config/subtle/selector.rb" 
 
   # Set font
-  Subtle::Contrib::Selector.font = "xft:termsynu:pixelsize=10:antialias=true" 
+  Subtle::Contrib::Selector.font = "xft:termsynu:pixelsize=18:antialias=true" 
 rescue LoadError => error
   puts error
 end
 
-grab "W-x" do
+grab "W-S-x" do
   Subtle::Contrib::Selector.run
 end
+
+# layouts
+grab "A-j", :LayoutNext
+grab "A-k", :LayoutPrev
+grab "A-g", :LayoutSetGravity
+grab "A-space", :LayoutSetNone
 
 # Run Ruby lambdas
 grab "S-F2" do |c|
@@ -974,6 +985,10 @@ end
 
 sublet :moc_info do
   bar_len 5
+end
+
+sublet :volume do
+  step 1
 end
 
 #
