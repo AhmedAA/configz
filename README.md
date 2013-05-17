@@ -29,7 +29,9 @@ sublets
 * moc_info (is broken, need to fix)
 * volume
 * nettraffic (has been patched with icons)
-added the following lines at the bottom:
+added the following lines at the bottom (icons are available in my
+icons dir):
+
 ```ruby
   s.down = Subtlext::Icon.new("net_down_02.xbm")
   s.up   = Subtlext::Icon.new("net_up_02.xbm")
