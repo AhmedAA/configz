@@ -28,16 +28,14 @@ sublets
 * wifi
 * moc_info (is broken, need to fix)
 * volume
-
 * nettraffic (has been patched with icons)
-
 added the following lines at the bottom:
 ```ruby
   s.down = Subtlext::Icon.new("net_down_02.xbm")
   s.up   = Subtlext::Icon.new("net_up_02.xbm")
   s.data = "#{s.down}#{rx_speed} KB/s #{s.up}#{tx_speed} KB/s"
 ```
-memory
-layout
-battery
-clock
+* memory
+* layout
+* battery
+* clock
