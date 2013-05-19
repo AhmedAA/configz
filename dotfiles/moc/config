@@ -80,10 +80,10 @@ OSSMixerChannel1	= pcm
 OSSMixerChannel2	= master
 
 # ALSA mixer device
-AlsaMixer1 		= PCM
+AlsaMixer1 		= Master
 
 # Second ALSA mixer device
-AlsaMixer2		= Master
+AlsaMixer2		= PCM
 
 # ALSA output device
 AlsaDevice		= default
