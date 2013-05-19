@@ -982,11 +982,7 @@ sublet :clock do
 end
 
 sublet :battery do
-  colors 10 => "#ff0000", 30 => "#fff000"
-end
-
-sublet :moc_info do
-  bar_len 5
+  colors 15 => "#ff0000", 25 => "#fff000"
 end
 
 sublet :volume do
