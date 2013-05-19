@@ -96,7 +96,7 @@ set :skip_urgent_warp, false
 #
 
 screen 1 do
-  top    [ :views, :separator, :layout, :separator, :spacer, :center, :title, :center, :tray, :separator, :battery, :separator, :memory, :separator, :wifi, :separator, :nettraffic, :separator, :volume, :separator, :clock ]
+  top    [ :views, :separator, :layout, :separator, :title, :spacer, :tray, :separator, :memory, :separator, :wifi, :separator, :nettraffic, :separator, :battery, :separator, :volume, :separator, :clock ]
 #  bottom [ :moc_info, :spacer, :center, :title, :center ]
 #  bottom [ :layout, :center, :conky, :center ]
 end
@@ -542,7 +542,8 @@ grab "W-A-c", "urxvt -name finch -e finch"
 grab "W-A-m", "urxvt -name moc -e mocp"
 grab "W-A-S-m", "urxvt -name mplayer"
 grab "W-p", "dmenu_run -sb darkgreen"
-grab "C-Escape", "i3lock -c 000000"
+grab "C-Escape", "i3lock -i /home/ahmed/Pictures/wp/033.png -d"
+#grab "C-Escape", "i3lock -c 000000"
 
 # selector
 begin
@@ -758,6 +759,7 @@ end
 tag "media" do
   match "gpicview"
   match "mypaint"
+  match "inkscape"
   match :name => "moc"
   match :name => "mplayer"
 end
