@@ -97,6 +97,7 @@ set :skip_urgent_warp, false
 
 screen 1 do
   top    [ :views, :separator, :layout, :separator, :title, :spacer, :tray, :separator, :memory, :separator, :wifi, :separator, :nettraffic, :separator, :battery, :separator, :volume, :separator, :clock ]
+  bottom [ :center, :mpd, :center ]
 #  bottom [ :moc_info, :spacer, :center, :title, :center ]
 #  bottom [ :layout, :center, :conky, :center ]
 end
@@ -460,9 +461,14 @@ grab "XF86AudioLowerVolume", :VolumeLower
 grab "XF86AudioMute", :VolumeToggle
 
 # moc
-grab "XF86AudioPrev", "mocp --previous"
-grab "XF86AudioPlay", "mocp -G"
-grab "XF86AudioNext", "mocp --next"
+#grab "XF86AudioPrev", "mocp --previous"
+#grab "XF86AudioPlay", "mocp -G"
+#grab "XF86AudioNext", "mocp --next"
+
+# ncmpcpp
+grab "XF86AudioPrev", "ncmpcpp previous"
+grab "XF86AudioPlay", "ncmpcpp toggle"
+grab "XF86AudioNext", "ncmpcpp next"
 
 # screenshot
 grab "Print", "import -window root /tmp/$(date +%F_%H%M%S_%N).png"
@@ -539,7 +545,8 @@ grab "W-Return", "terminology"
 grab "W-S-Return", "urxvt -name devterm"
 grab "W-S-f", "urxvt -e mc -b"
 grab "W-A-c", "urxvt -name finch -e finch"
-grab "W-A-m", "urxvt -name moc -e mocp"
+#grab "W-A-m", "urxvt -name moc -e mocp"
+grab "W-A-m" , "urxvt -name ncmpcpp -e ncmpcpp"
 grab "W-A-S-m", "urxvt -name mplayer"
 grab "W-p", "dmenu_run -sb darkgreen"
 grab "C-Escape", "i3lock -i /home/ahmed/Pictures/wp/033.png -d"
@@ -761,6 +768,7 @@ tag "media" do
   match "mypaint"
   match "inkscape"
   match :name => "moc"
+  match :name => "ncmpcpp"
   match :name => "mplayer"
 end
 
