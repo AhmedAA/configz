@@ -147,6 +147,17 @@
 (setq text-mode-hook 'turn-on-auto-fill)
 (setq major-mode 'text-mode)
 
+;; edit file as root
+(defun edit-as-root ()
+  "Edit the file that is associated with the current buffer as root"
+  (interactive)
+  (if (buffer-file-name)
+      (progn
+	(setq file (concat "/sudo:root@localhost:" (buffer-file-name)))
+	(find-file file))
+    (message "Current buffer does not have an associated file.")))
+
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
