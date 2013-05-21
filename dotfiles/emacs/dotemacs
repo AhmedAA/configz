@@ -143,9 +143,9 @@
 (put 'downcase-region 'disabled nil)
 
 ;; Set column size to 80
-(setq fill-column 80)
-(setq text-mode-hook 'turn-on-auto-fill)
 (setq major-mode 'text-mode)
+(setq-default fill-column 80)
+(setq text-mode-hook 'turn-on-auto-fill)
 
 ;; edit file as root
 (defun edit-as-root ()
