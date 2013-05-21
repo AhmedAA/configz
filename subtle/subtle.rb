@@ -540,6 +540,7 @@ grab "W-c", [ :bottom_right, :bottom_right66, :bottom_right33 ]
 
 # Exec programs
 grab "W-Return", "terminology"
+grab "W-S-e" , "urxvt -name emacs -e emacs -nw"
 grab "W-S-Return", "urxvt -name devterm"
 grab "W-S-f", "urxvt -e mc -b"
 grab "W-A-c", "urxvt -name finch -e finch"
@@ -777,7 +778,10 @@ tag "games" do
   float true
 end
 
-tag "browser", "uzbl|opera|firefox|navigator"
+tag "browser" do
+  match "uzbl|opera|firefox|navigator"
+  match "Security Approval Required"
+end
 
 # Placement
 tag "editor" do
