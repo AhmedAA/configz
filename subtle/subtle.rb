@@ -543,7 +543,6 @@ grab "W-Return", "terminology"
 grab "W-S-e" , "urxvt -name emacs -e emacs -nw"
 grab "W-S-Return", "urxvt -name devterm"
 grab "W-S-f", "urxvt -e mc -b"
-grab "W-A-c", "urxvt -name finch -e finch"
 #grab "W-A-m", "urxvt -name moc -e mocp"
 grab "W-A-m" , "urxvt -name ncmpcpp -e ncmpcpp"
 grab "W-A-S-m", "urxvt -name mplayer"
@@ -759,7 +758,6 @@ end
 
 tag "mail/chat" do
   match "thunderbird"
-  match :name => "finch"
 end
 
 tag "media" do
@@ -934,7 +932,7 @@ view "games" do
 end
 
 view "mail/chat" do
-  match "mail|finch"
+  match "mail"
   icon "/home/ahmed/.icons/mail.xbm"
   icon_only true
 end
