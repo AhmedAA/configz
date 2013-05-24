@@ -284,6 +284,9 @@ gravity :gimp_image,     [  10,   0,  80, 100 ]
 gravity :gimp_toolbox,   [   0,   0,  10, 100 ]
 gravity :gimp_dock,      [  90,   0,  10, 100 ]
 
+# Compose
+gravity :compose,        [  17,   17, 66, 100 ]
+
 #
 # == Grabs
 #
@@ -762,7 +765,7 @@ end
 
 tag "compose" do
   match :instance => "Msgcompose"
-  gravity :center66
+  gravity :compose
 end
 
 tag "media" do
