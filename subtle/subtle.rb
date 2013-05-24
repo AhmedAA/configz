@@ -760,6 +760,11 @@ tag "mail/chat" do
   match "thunderbird"
 end
 
+tag "compose" do
+  match :instance => "Msgcompose"
+  gravity :center66
+end
+
 tag "media" do
   match "gpicview"
   match "mypaint"
@@ -932,7 +937,7 @@ view "games" do
 end
 
 view "mail/chat" do
-  match "mail"
+  match "mail|compose"
   icon "/home/ahmed/.icons/mail.xbm"
   icon_only true
 end
