@@ -810,10 +810,15 @@ tag "gravity" do
 end
 
 # Modes
-tag "stick" do
+tag "center66" do
   match "mplayer"
+  gravity :center66
+end
+
+tag "stick" do
+#  match "mplayer"
   float true
-  #stick true
+  stick true
 end
 
 tag "float" do
@@ -927,7 +932,7 @@ view "study" do
 end
 
 view "media" do
-  match "gimp_.*|media"
+  match "gimp_.*|media|center66"
   icon "/home/ahmed/.icons/headphones.xbm"
   icon_only true
 end
