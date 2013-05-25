@@ -546,7 +546,6 @@ grab "W-Return", "terminology"
 grab "W-S-e" , "urxvt -name emacs -e emacs -nw"
 grab "W-S-Return", "urxvt -name devterm"
 grab "W-S-f", "urxvt -e mc -b"
-#grab "W-A-m", "urxvt -name moc -e mocp"
 grab "W-A-m" , "urxvt -name ncmpcpp -e ncmpcpp"
 grab "W-A-S-m", "urxvt -name mplayer"
 grab "W-p", "dmenu_run -sb darkgreen"
@@ -777,7 +776,7 @@ tag "media" do
   match :name => "mplayer"
 end
 
-tag "games" do 
+tag "games" do
   match "Steam|hl_linux|hl2_linux"
   match "Bastion"
   match "bastion"
@@ -787,6 +786,11 @@ end
 tag "browser" do
   match "uzbl|opera|firefox|navigator"
   match "Security Approval Required"
+end
+
+tag "flash" do
+  match "<unknown>|plugin-container|exe|operapluginwrapper|npviewer.bin" 
+#  stick true
 end
 
 # Placement
@@ -914,7 +918,7 @@ view "home" do
 end
 
 view "www" do
-  match "browser"
+  match "browser|flash"
   icon "/home/ahmed/.icons/world.xbm"
   icon_only true
 end
