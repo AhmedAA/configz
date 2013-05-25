@@ -147,8 +147,8 @@ style :views do
   # Style for the active views
   style :focus do
    # foreground  "#ffffff"
-    Foreground  "#00FF00"
-    background	"#1f1f1f"
+    foreground  "#00FF00"
+   # background	"#1f1f1f"
    # icon        "#ffffff"
     icon        "#00FF00"
    # border_top  "#aadb0f", 2
