@@ -1,0 +1,41 @@
+# my glowing archlinux theme for SLiM (where the glow and message color corresponds to my laptop's LEDs ^-^)
+# by Kamila Souckova <kamila@vesmir.sk>
+
+# modified by Ahmed Al Aqtash <ahmed.aqtash@gmail.com>
+
+# Messages (e.g. shutdown)
+msg_color               #93d50b
+msg_font                Terminus:size=18:dpi=75
+msg_x                   50%
+msg_y                   74%
+
+# valid values: stretch, tile, center
+background_style        center
+background_color        #000000
+
+# Input controls
+input_panel_x           50%
+input_panel_y           74%
+input_name_x            136
+input_name_y            22
+input_pass_x            224
+input_pass_y            22
+input_font              Terminus:size=10:dpi=75
+input_color             #93d50b
+
+# Username / password request
+username_font           Terminus:size=10:bold:dpi=75
+username_color          #93d50b
+username_x              94
+username_y              22
+password_x              204
+password_y              22
+
+username_msg            user:
+password_msg            pw:
+
+# Welcome message
+welcome_x             	50%
+welcome_y             	8
+welcome_font          	Terminus:size=10:bold:dpi=75
+welcome_color         	#93d50b
