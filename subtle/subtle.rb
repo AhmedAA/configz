@@ -548,11 +548,11 @@ grab "W-S-Return", "urxvt -name devterm"
 grab "W-S-f", "urxvt -e mc -b"
 grab "W-A-m" , "urxvt -name ncmpcpp -e ncmpcpp"
 grab "W-A-S-m", "urxvt -name mplayer"
-grab "W-p", "dmenu_run -sb darkgreen"
+#grab "W-p", "dmenu_run -sb darkgreen"
 grab "C-Escape", "i3lock -i /home/ahmed/Pictures/wp/033.png -d"
 #grab "C-Escape", "i3lock -c 000000"
 
-# selector
+# selector #####################################################################
 begin
   require "#{ENV["HOME"]}/.config/subtle/selector.rb" 
 
@@ -565,6 +565,26 @@ end
 grab "W-S-x" do
   Subtle::Contrib::Selector.run
 end
+################################################################################
+
+# launcher #####################################################################
+begin
+  require "#{ENV["HOME"]}/.config/subtle/launcher.rb"
+# Set paths
+  Subtle::Contrib::Launcher.paths = [ "/usr/bin", "~/bin" ]
+# Set fonts
+  Subtle::Contrib::Launcher.fonts = [
+                                     "xft:termsynu:pixelsize=18:antialias=true",
+                                     "xft:termsynu:pixelsize=18:antialias=true" 
+                                    ]
+rescue LoadError => error
+  puts error
+end
+
+grab "W-p" do
+  Subtle::Contrib::Launcher.run
+end
+################################################################################
 
 # layouts
 grab "A-j", :LayoutNext
@@ -755,11 +775,12 @@ end
 tag "study" do
   match "zathura"
   match "calibre"
-  match "NixNote"
+  match :name => "NixNote"
 end
 
 tag "mail/chat" do
   match "thunderbird"
+  match "pinentry"
 end
 
 tag "compose" do
@@ -1051,4 +1072,3 @@ end
 #
 # http://subforge.org/projects/subtle/wiki/Hooks
 #
-# vim:ts=2:bs=2:sw=2:et:fdm=marker
