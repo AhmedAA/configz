@@ -515,28 +515,14 @@ grab "W-Right", :WindowRight
 grab "W-S-k", :WindowKill
 
 # Cycle between given gravities
-#grab "W-KP_7", [ :top_left,     :top_left66,     :top_left33     ]
-#grab "W-KP_8", [ :top,          :top66,          :top33          ]
-#grab "W-KP_9", [ :top_right,    :top_right66,    :top_right33    ]
-#grab "W-KP_4", [ :left,         :left66,         :left33         ]
-#grab "W-KP_5", [ :center,       :center66,       :center33       ]
-#grab "W-KP_6", [ :right,        :right66,        :right33        ]
-#grab "W-KP_1", [ :bottom_left,  :bottom_left66,  :bottom_left33  ]
-#grab "W-KP_2", [ :bottom,       :bottom66,       :bottom33       ]
-#grab "W-KP_3", [ :bottom_right, :bottom_right66, :bottom_right33 ]
-
-# In case no numpad is available e.g. on notebooks
 grab "W-q", [ :top_left,     :top_left66,     :top_left33     ]
 grab "W-w", [ :top,          :top66,          :top33          ]
 grab "W-e", [ :top_right,    :top_right66,    :top_right33    ]
+
 grab "W-a", [ :left,         :left66,         :left33         ]
 grab "W-s", [ :center,       :center66,       :center33       ]
 grab "W-d", [ :right,        :right66,        :right33        ]
-#
-# QUERTZ
-#grab "W-y", [ :bottom_left,  :bottom_left66,  :bottom_left33  ]
-#
-# QWERTY
+
 grab "W-z", [ :bottom_left,  :bottom_left66,  :bottom_left33  ]
 grab "W-x", [ :bottom,       :bottom66,       :bottom33       ]
 grab "W-c", [ :bottom_right, :bottom_right66, :bottom_right33 ]
@@ -571,7 +557,7 @@ end
 begin
   require "#{ENV["HOME"]}/.config/subtle/launcher.rb"
 # Set paths
-  Subtle::Contrib::Launcher.paths = [ "/usr/bin", "~/bin" ]
+  Subtle::Contrib::Launcher.paths = [ "/usr/bin" ]
 # Set fonts
   Subtle::Contrib::Launcher.fonts = [
                                      "xft:termsynu:pixelsize=18:antialias=true",
@@ -792,21 +778,20 @@ tag "media" do
   match "gpicview"
   match "mypaint"
   match "inkscape"
-  match :name => "moc"
   match :name => "ncmpcpp"
   match :name => "mplayer"
 end
 
 tag "games" do
   match "Steam|hl_linux|hl2_linux"
-  match "Bastion"
-  match "bastion"
+  match :name => "Bastion"
   float true
 end
 
 tag "browser" do
   match "uzbl|opera|firefox|navigator"
-  match "Security Approval Required"
+  match :name => "Security Approval Required"
+  match :instance => "sun-awt-X11-XDialogPeer"
 end
 
 tag "flash" do
@@ -817,17 +802,11 @@ end
 # Placement
 tag "editor" do
   match  "[g]?vim|emacs"
-#  resize true
 end
 
 tag "fixed" do
   geometry [ 10, 10, 100, 100 ]
   stick    true
-end
-
-tag "resize" do
-  match  "sakura|gvim"
-  resize true
 end
 
 tag "gravity" do
@@ -969,7 +948,7 @@ view "games" do
   icon_only true
 end
 
-view "mail/chat" do
+view "mail" do
   match "mail|compose"
   icon "/home/ahmed/.icons/mail.xbm"
   icon_only true
