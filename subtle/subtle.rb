@@ -1007,7 +1007,7 @@ sublet :clock do
 end
 
 sublet :battery do
-  colors 15 => "#ff0000", 25 => "#fff000"
+  colors 15 => "#ff0000", 67 => "fff000", 100 => "#00ff00"
 end
 
 sublet :volume do
