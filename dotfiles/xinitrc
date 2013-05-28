@@ -1,4 +1,4 @@
-BB#!/bin/zsh
+#!/bin/zsh
 
 # Set default browser to firefox
 export BROWSER="firefox"
@@ -32,21 +32,27 @@ xsetroot -cursor_name left_ptr
 # Start xcompmgr
 xcompmgr -c &
 
+# Conky
+#conky -c /home/ahmed/.config/conky/conkyrc &
+
 # Start the Dropbox daemon
 #/usr/bin/dropboxd &
 
 # Uses feh to set the background
 sh /home/ahmed/.config/wallpaper.sh &
 
+# Auto lock the screen after n minutes
+# For a solid black background i3lock -c 000000
+xautolock -time 10 -locker 'i3lock -i /home/ahmed/Pictures/wp/033.png -d' &
+
+# Start the window manager
 exec subtle
 
 #case $1 in
+#subtle)
+#	exec subtle
+#	;;
 #i3)
 #	exec i3
-#	;;
-#dwm)
-#	# conky
-#	conky | while read -r; do xsetroot -name "$REPLY"; done &
-#	exec dwm
 #	;;
 #esac
