@@ -41,3 +41,12 @@ icons dir):
 * layout
 * battery
 * clock
+
+General Notes
+=============
+
+I have added a cronjob to run the wallpaper script. Looks like:
+```bash
+*/30 * * * * /home/ahmed/.config/wallpaper.sh
+```
+Changes the wallpaper once every 30 minutes.
