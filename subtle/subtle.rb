@@ -557,7 +557,7 @@ end
 begin
   require "#{ENV["HOME"]}/.config/subtle/launcher.rb"
 # Set paths
-  Subtle::Contrib::Launcher.paths = [ "/usr/bin" ]
+  Subtle::Contrib::Launcher.paths = [ "/usr/bin", "/home/ahmed/.config/subtle" ]
 # Set fonts
   Subtle::Contrib::Launcher.fonts = [
                                      "xft:termsynu:pixelsize=18:antialias=true",
@@ -1007,7 +1007,7 @@ sublet :clock do
 end
 
 sublet :battery do
-  colors 15 => "#ff0000", 67 => "fff000", 100 => "#00ff00"
+  colors 15 => "#ff0000", 100 => "#00ff00"
 end
 
 sublet :volume do
