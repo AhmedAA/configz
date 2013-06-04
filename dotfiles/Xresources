@@ -6,7 +6,8 @@ URxvt*scrollBar: false
 URxvt*transparent: true
 URxvt*shading: 30
 !urxvt*font: xft:UnTaza:pixelsize=10
-URxvt*font: xft:Terminus-Regular:pixelsize=10
+!URxvt*font: xft:Terminus-Regular:pixelsize=10
+URxvt*font: xft:Termsynu:pixelsize=9
 URxvt*saveLines: 10000
 
 !!!!!!!!!!!!!!! MOC !!!!!!!!!!!!!!!!!!!!!!!!!
@@ -41,4 +42,4 @@ Xft.antialias: 1
 Xft.rgba: rgb
 
 !Emacs
-Emacs.font: Terminus-9
+Emacs.font: Termsynu-9
