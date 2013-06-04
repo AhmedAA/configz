@@ -535,7 +535,7 @@ grab "W-S-f", "urxvt -e mc -b"
 grab "W-A-m" , "urxvt -name ncmpcpp -e ncmpcpp"
 grab "W-A-S-m", "urxvt -name mplayer"
 #grab "W-p", "dmenu_run -sb darkgreen"
-grab "C-Escape", "i3lock -i /home/ahmed/Pictures/wp/033.png -d"
+grab "C-Escape", "i3lock -i /home/ahmed/Pictures/wp/033.png -d && ncmpcpp pause"
 #grab "C-Escape", "i3lock -c 000000"
 
 # selector #####################################################################
@@ -834,6 +834,10 @@ end
 tag "gimp_image" do
   match   :role => "gimp-image-window"
   gravity :gimp_image
+end
+
+tag "gimp_resynth" do
+  match :name => "Resynthesize"
 end
 
 tag "gimp_toolbox" do
