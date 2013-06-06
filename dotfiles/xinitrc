@@ -4,7 +4,7 @@
 export BROWSER="firefox"
 
 # Set editor to vim
-export EDITOR="emacs"
+export EDITOR="emacs -nw"
 
 # java fix
 #wmname LG3D &
