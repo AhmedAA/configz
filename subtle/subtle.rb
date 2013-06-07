@@ -528,7 +528,7 @@ grab "W-x", [ :bottom,       :bottom66,       :bottom33       ]
 grab "W-c", [ :bottom_right, :bottom_right66, :bottom_right33 ]
 
 # Exec programs
-grab "W-Return", "terminology"
+grab "W-Return", "urxvt"
 grab "W-S-e" , "urxvt -name emacs -e emacs -nw"
 grab "W-S-Return", "urxvt -name devterm"
 grab "W-S-f", "urxvt -e mc -b"
