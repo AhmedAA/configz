@@ -573,6 +573,7 @@ end
 ################################################################################
 
 # layouts
+grab "A-S-j", :LayoutSetRight
 grab "A-j", :LayoutNext
 grab "A-k", :LayoutPrev
 grab "A-g", :LayoutSetGravity
