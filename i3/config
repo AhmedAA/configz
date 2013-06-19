@@ -96,19 +96,27 @@ bindsym $mod+a focus parent
 bindsym $mod+Control+f exec urxvt -e finch
 
 # assign programs to tags
-assign [class="Thunderbird"] 5
-assign [class="Firefox"] 1
+assign [class="Thunderbird"] $w5
+assign [class="Firefox"] $w1
 
 # program rules
 for_window [class="Thunderbird" instance="Msgcompose"] floating enable
 for_window [class="Qt Jambi application"] floating enable
 
+# workspace names
+set $w1 web
+set $w2 dev
+set $w3 read
+set $w4 media
+set $w5 mail/chat
+
 # switch to workspace
-bindsym $mod+1 workspace 1; layout tabbed
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5; layout tabbed
+#bindsym $mod+1 workspace 1; layout tabbed
+bindsym $mod+1 workspace $w1; layout tabbed
+bindsym $mod+2 workspace $w2
+bindsym $mod+3 workspace $w3
+bindsym $mod+4 workspace $w4
+bindsym $mod+5 workspace $w5; layout tabbed
 #bindsym $mod+6 workspace 6
 #bindsym $mod+7 workspace 7
 #bindsym $mod+8 workspace 8
