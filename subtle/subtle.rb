@@ -467,7 +467,7 @@ grab "XF86AudioMute", :VolumeToggle
 #grab "XF86AudioNext", "mocp --next"
 
 # ncmpcpp
-grab "XF86AudioPrev", "ncmpcpp previous"
+grab "XF86AudioPrev", "ncmpcpp prev"
 grab "XF86AudioPlay", "ncmpcpp toggle"
 grab "XF86AudioNext", "ncmpcpp next"
 
