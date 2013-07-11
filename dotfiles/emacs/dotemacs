@@ -113,7 +113,7 @@
 (ac-config-default)
 
 ;; Haskell mode
-(load "/usr/share/emacs/site-lisp/haskell-mode/haskell-site-file")
+;;(load "/usr/share/emacs/site-lisp/haskell-mode/haskell-site-file")
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 (setq haskell-font-lock-symbols t) ;; to get unicode symbols for lambda etc.

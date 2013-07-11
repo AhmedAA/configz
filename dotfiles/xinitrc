@@ -26,6 +26,9 @@ xsetroot -cursor_name left_ptr
 # daemon itself)
 #emacs --daemon
 
+# gpg-agent
+eval $(gpg-agent --daemon) &
+
 # unclutter to hide the cursor
 unclutter -idle 2 -noevents &
 
