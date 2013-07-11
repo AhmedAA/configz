@@ -96,8 +96,8 @@ set :skip_urgent_warp, false
 #
 
 screen 1 do
-  top    [ :views, :center, :title, :center, :spacer, :tray, :separator, :wifi, :separator, :battery, :separator, :volume, :separator, :clock ]
-  bottom [ :layout, :center, :mpd, :center, :spacer, :nettraffic, :separator, :memory ]
+  top    [ :mpd, :center, :views, :center, :spacer, :tray, :separator, :wifi, :separator, :battery, :separator, :volume, :separator, :clock ]
+  bottom [ :layout, :center, :title, :center, :spacer, :nettraffic, :separator, :memory ]
 end
 
 # Example for a second screen:
