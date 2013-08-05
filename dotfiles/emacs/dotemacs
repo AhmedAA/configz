@@ -7,6 +7,8 @@
 ;;(color-theme-gnome2)
 ;;(color-theme-solarized-dark)
 
+;;(load-theme 'zenburn t)
+
 ;; So the idea is that you copy/paste this code into your *scratch* buffer,
 ;; hit C-j, and you have a working developper edition of el-get.
 ;;(url-retrieve
@@ -37,7 +39,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes (quote ("fc6e906a0e6ead5747ab2e7c5838166f7350b958d82e410257aeeb2820e8a07a" default)))
  '(linum-format (quote dynamic))
+ '(minimap-window-location (quote right))
  '(safe-local-variable-values (quote ((encoding . utf-8)))))
 
 ;; Set up a different background and foreground colour for line
@@ -164,3 +168,20 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; minimap
+(defun minimap-toggle ()
+  "Toggle minimap for current buffer."
+  (interactive)
+  (if (not (boundp 'minimap-bufname))
+      (setf minimap-bufname nil))
+  (if (null minimap-bufname)
+      (progn (minimap-create)
+	     (set-frame-width (selected-frame) 100))
+    (progn (minimap-kill)
+	   (set-frame-width (selected-frame) 80))))
+
+;; minimap spawns to the left per default, do the following to get in the right
+;; side:
+;; M-x customize-group RET minimap RET -> find the relevant entry
+(global-set-key (kbd "<f1>") 'minimap-toggle)
