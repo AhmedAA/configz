@@ -1,0 +1,11 @@
+FIRST: Go to about:config, look up browser.tabs.onTop, make it "false"
+Copy the CSS in this folder into stylish, and enable (note this CSS only works
+on linux, for windows search for Ahoka pastebin)
+Move all add on buttons to the add on bar in the bottom.
+Move the navigation bar to the left of the tabs bar (and all
+navigation buttons).
+Should be all set.
+
+Alternatively, the navigation bar could be moved to the addons bar, but that
+requires the addons bar to be visible most of the time. That might not be
+desireable.
