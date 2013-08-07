@@ -128,8 +128,8 @@ end
 # http://subforge.org/projects/subtle/wiki/Styles
 # Style for all style elements
 style :all do
-  background    "#111111"
-  icon          "#111111"
+  background    "#F6F3E8"
+  icon          "#909090"
   padding       3, 3, 3, 3
   font          "xft:termsynu:pixelsize=9"
 end
@@ -137,55 +137,55 @@ end
 # Style for the all views
 style :views do
   padding	3, 8, 0, 8
-  foreground    "#3f3f3f"
-  icon          "#3f3f3f"
+  foreground    "#F6F3E8"
+  icon          "#909090"
 
   # Style for the active views
   style :focus do
    # foreground  "#ffffff"
    # foreground  "#00FF00"
    # background	"#1f1f1f"
-    icon        "#ffffff"
-   # icon        "#00C400"
-   # border_top  "#00C400", 2
+   # icon        "#ffffff"
+    icon        "#00000"
+    border_top  "#00000", 2
   end
 
   # Style for urgent widow titles and views
   style :urgent do
-    foreground  "#ff0000"
-    icon "#ff0000"
+    foreground  "#cc9393"
+    icon "#cc9393"
   end
 
   # Style for occupied views (views with clients)
   style :occupied do
-    foreground  "#909090"
-    icon        "#909090"
-    # border_top  "#909090", 1
+    foreground  "#404040"
+    icon        "#404040"
+    border_top  "#404040", 1
   end
 end
 
 # Style for sublets
 style :sublets do
-  foreground    "#757575"
-  background    "#111111"
-  icon		"#757575"
+  foreground    "#7F9F7F"
+  background    "#F6F3E8"
+  icon		"#7F9F7F"
 end
 
 # Style for separator
 style :separator do
-  foreground  "#757575"
+  foreground  "#7F9F7F"
   separator   "|"
 end
 
 # Style for focus window title
 style :title do
-  foreground  "#ffffff"
+  foreground  "#7F9F7F"
 end
 
 # Style for active/inactive windows
 style :clients do
-  active    "#222222", 0
-  inactive  "#494949", 0
+  active    "#222222", 1
+  inactive  "#494949", 1
   margin    5
   width     50
 end
@@ -193,9 +193,9 @@ end
 # Style for subtle
 style :subtle do
   margin      2, 2, 2, 2
-  panel       "#111111"
-  background  "#111111"
-  stipple     "#757575"
+  panel       "#F6F3E8"
+  background  "#F6F3E8"
+  stipple     "#F6F3E8"
 end
 
 #
