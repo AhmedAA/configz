@@ -142,10 +142,8 @@ style :views do
 
   # Style for the active views
   style :focus do
-   # foreground  "#ffffff"
-   # foreground  "#00FF00"
-   # background	"#1f1f1f"
-   # icon        "#ffffff"
+    foreground  "#709080"
+    background  "#333333"
     icon        "#f0dfaf"
     border_top  "#709080", 2
   end
@@ -195,7 +193,7 @@ style :subtle do
   margin      2, 2, 2, 2
   panel       "#333333"
   background  "#8f8f8f"
-  stipple     "#F6F3E8"
+  stipple     "#f0dfaf"
 end
 
 #
@@ -224,12 +222,12 @@ end
 # Top left
 gravity :top_left,       [   0,   0,  50,  50 ]
 gravity :top_left66,     [   0,   0,  50,  66 ]
-gravity :top_left33,     [   0,   0,  50,  34 ]
+gravity :top_left33,     [   0,   0,  50,  33 ]
 
 # Top
 gravity :top,            [   0,   0, 100,  50 ]
 gravity :top66,          [   0,   0, 100,  66 ]
-gravity :top33,          [   0,   0, 100,  34 ]
+gravity :top33,          [   0,   0, 100,  33 ]
 
 # Top right
 gravity :top_right,      [  50,   0,  50,  50 ]
