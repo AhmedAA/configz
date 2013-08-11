@@ -184,8 +184,8 @@ end
 
 # Style for active/inactive windows
 style :clients do
-  active    "#222222", 1
-  inactive  "#494949", 1
+  active    "#f0dfaf", 1
+  inactive  "#3f3f3f", 1
   margin    5
   width     50
 end
