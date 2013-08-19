@@ -26,7 +26,7 @@ sublets
 =======
 
 * wifi
-* moc_info (is broken, need to fix)
+* mpd
 * volume
 * nettraffic (has been patched with icons)
 added the following lines at the bottom (icons are available in my
