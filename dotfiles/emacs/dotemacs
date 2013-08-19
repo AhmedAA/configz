@@ -1,15 +1,7 @@
-(package-initialize)
+;;; AAA --- My .emacs
 
-;; Emacs color themes
-;;(require 'color-theme)
-;;(color-theme-initialize)
-;;(color-theme-robin-hood)
-;;(color-theme-classic)
-;;(color-theme-gnome)
-;;(color-theme-gnome2)
-;;(color-theme-solarized-dark)
-
-(load-theme 'zenburn t)
+;;; Commentary:
+;; Below should come in handy in the future.
 
 ;; So the idea is that you copy/paste this code into your *scratch* buffer,
 ;; hit C-j, and you have a working developper edition of el-get.
@@ -19,6 +11,11 @@
 ;;   (let (el-get-master-branch)
 ;;     (goto-char (point-max))
 ;;     (eval-print-last-sexp))))
+
+;;; Code:
+(package-initialize)
+
+(load-theme 'zenburn t)
 
 ;; No blinking cursor!
 (blink-cursor-mode 0)
@@ -190,3 +187,5 @@
 
 (require 'powerline)
 (powerline-default-theme)
+
+;;; .emacs ends here
