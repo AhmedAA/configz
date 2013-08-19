@@ -1,3 +1,5 @@
+(package-initialize)
+
 ;; Emacs color themes
 ;;(require 'color-theme)
 ;;(color-theme-initialize)
@@ -7,7 +9,7 @@
 ;;(color-theme-gnome2)
 ;;(color-theme-solarized-dark)
 
-;;(load-theme 'zenburn t)
+(load-theme 'zenburn t)
 
 ;; So the idea is that you copy/paste this code into your *scratch* buffer,
 ;; hit C-j, and you have a working developper edition of el-get.
@@ -185,3 +187,6 @@
 ;; side:
 ;; M-x customize-group RET minimap RET -> find the relevant entry
 (global-set-key (kbd "<f1>") 'minimap-toggle)
+
+(require 'powerline)
+(powerline-default-theme)
