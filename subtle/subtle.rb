@@ -172,7 +172,7 @@ end
 # Style for separator
 style :separator do
   foreground  "#6f6f6f"
-  separator   "|"
+  separator   " "
 end
 
 # Style for focus window title
@@ -764,6 +764,7 @@ tag "media" do
   match "gpicview"
   match "mypaint"
   match "inkscape"
+  match "Spotify"
   match :name => "ncmpcpp"
   match :name => "mplayer"
 end
@@ -991,8 +992,8 @@ end
 #
 sublet :clock do
   interval      30
-  foreground    "#eeeeee"
-  background    "#000000"
+  foreground    "#9fafaf"
+  background    "#9fafaf"
   format_string "%H:%M %A %d %B"
 end
 
