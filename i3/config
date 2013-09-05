@@ -27,8 +27,7 @@ hide_edge_borders both
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-#bindsym $mod+Return exec urxvt
-bindsym $mod+Return exec terminology
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+Q kill
@@ -92,28 +91,24 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindcode $mod+d focus child
 
-# starting stuffs
-bindsym $mod+Control+f exec urxvt -e finch
-
 # assign programs to tags
 assign [class="Thunderbird"] $w5
-assign [class="Firefox"] $w1
+assign [class="Firefox"] $w2
 
 # program rules
 for_window [class="Thunderbird" instance="Msgcompose"] floating enable
-for_window [class="Qt Jambi application"] floating enable
 
 # workspace names
-set $w1 web
-set $w2 dev
-set $w3 read
-set $w4 media
-set $w5 mail/chat
+set $w1 1
+set $w2 2
+set $w3 3
+set $w4 4
+set $w5 5
 
 # switch to workspace
 #bindsym $mod+1 workspace 1; layout tabbed
-bindsym $mod+1 workspace $w1; layout tabbed
-bindsym $mod+2 workspace $w2
+bindsym $mod+1 workspace $w1
+bindsym $mod+2 workspace $w2; layout tabbed
 bindsym $mod+3 workspace $w3
 bindsym $mod+4 workspace $w4
 bindsym $mod+5 workspace $w5; layout tabbed
@@ -142,9 +137,9 @@ bindsym $mod+Shift+C reload
 bindsym $mod+Shift+R restart
 
 # audio keys
-bindsym XF86AudioPrev exec mocp --previous
-bindsym XF86AudioPlay exec mocp -G
-bindsym XF86AudioNext exec mocp --next
+bindsym XF86AudioPrev exec ncmpcpp prev
+bindsym XF86AudioPlay exec ncmpcpp toggle
+bindsym XF86AudioNext exec ncmpcpp next
 
 # screenshot
 bindsym Print exec import -window root /tmp/$(date +%F_%H%M%S_%N).png
@@ -196,7 +191,8 @@ mode "RESIZE" {
 bindsym $mod+r mode "RESIZE"
 
 # Lock screen with i3lock
-bindsym Control+Escape exec i3lock -c 000000
+#bindsym Control+Escape exec i3lock -c 000000
+bindsym Control+Escape exec i3lock -i /home/ahmed/Pictures/wp/108.png -d && ncmpcpp pause
 
 # Volume
 bindsym XF86AudioRaiseVolume exec amixer -c 0 set Master 2dB+
