@@ -139,6 +139,8 @@
 ;; auctex package
 (load "auctex.el" nil t t)
 (load "preview-latex.el" nil t t)
+;; make auctex use pdflatex
+(setq TeX-PDF-mode t)
 
 ;; Org-Mode
 (require 'org-install)
