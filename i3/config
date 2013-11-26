@@ -106,7 +106,9 @@ assign [class="Thunderbird"] $w5
 assign [class="Firefox"] $w2
 
 # program rules
+for_window [class="Thunderbird"] border none
 for_window [class="Thunderbird" instance="Msgcompose"] floating enable
+for_window [class="Firefox"] border none
 
 # workspace names
 set $w1 1
