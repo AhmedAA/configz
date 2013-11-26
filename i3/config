@@ -11,6 +11,16 @@
 
 set $mod Mod4
 
+########################################################
+#########		Aesthetics		########
+#########################################################
+## Window border style: normal: border normal, with window title bar;
+## none: no border or window title bar; 1pixel: 1 pixel border.
+new_window normal
+bindsym $mod+t border normal
+bindsym $mod+y border 1pixel
+bindsym $mod+u border none
+
 # font for window titles. ISO 10646 = Unicode
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 font -nil-profont-medium-r-normal--10-100-72-72-c-50-iso8859-1
@@ -33,7 +43,7 @@ bindsym $mod+Return exec urxvt
 bindsym $mod+Shift+Q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run -sb darkgreen -b
+bindsym $mod+d exec dmenu_run -sb darkgreen
 
 # change focus
 bindsym $mod+j focus left
