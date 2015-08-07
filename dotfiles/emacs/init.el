@@ -13,66 +13,6 @@
 ;;     (eval-print-last-sexp))))
 
 ;;; Code:
-;;(package-initialize)
-
-;;(load-theme 'zenburn t)
-
-;; ================================== Font and misc visual settings
-;; AquaMacs specific
-;;(one-buffer-one-frame-mode 0)
-;;(setq-default cursor-type 'box)
-;;(set-face-background 'cursor "black")
-;; (set-frame-font "-apple-dejavu sans mono-medium-r-normal--0-0-0-0-m-0-mac-roman")
-;; (set-default-font "-apple-bitstream vera sans mono-medium-r-normal--15-120-72-72-m-120-iso10646-1")
-
-;; No blinking cursor!
-(blink-cursor-mode 0)
-
-;; Set tab width to 4
-(setq-default indent-tabs-mode nil)
-(setq tab-width 4)
-
-;; No backup files, annoying
-(setq make-backup-files nil)
-
-;; Should I start using backups... (from jsfr)
-;; store all backup and autosave files in the tmp dir
-;; (setq
-;;  backup-by-copying t      ; don't clobber symlinks
-;;    backup-directory-alist
-;;    '(("." . "~/.saves"))    ; don't litter my fs tree
-;;    delete-old-versions t
-;;    kept-new-versions 6
-;;    kept-old-versions 2
-;;    version-control t)       ; use versioned backups
-;; (setq backup-directory-alist
-;;       `((".*" . ,"/home/jens/.emacs.d/backups")))
-;; (setq auto-save-file-name-transforms
-;;       `((".*" ,"/home/jens/.emacs.d/autosaves" t)))
-
-;; Turn on column numbering in status line
-(column-number-mode t)
-
-;; Disable the menu-bar
-(menu-bar-mode -1)
-
-;; Disable the scrollbar
-(scroll-bar-mode -1)
-
-;; Disable the toolbar
-(tool-bar-mode -1)
-
-; Dont use gtk dialogs, but use the minibuffer instead
-(setq use-dialog-box nil)
-
-;; Set column size to 80
-(setq major-mode 'text-mode)
-(setq-default fill-column 80)
-(setq text-mode-hook 'turn-on-auto-fill)
-
-;; Show line numbers in the left side of the buffer.
-(require 'linum)
-(global-linum-mode 1)
 
 ;; ================================== Functions
 (require 'cl)
@@ -151,9 +91,83 @@
     (when (not (package-installed-p p))
       (package-install p))))
 
+;; ================================== Font and misc visual settings
+;; AquaMacs specific/Mac specific
+;;(one-buffer-one-frame-mode 0)
+;;(setq-default cursor-type 'box)
+;;(set-face-background 'cursor "black")
+;; (set-frame-font "-apple-dejavu sans mono-medium-r-normal--0-0-0-0-m-0-mac-roman")
+;; (set-default-font "-apple-bitstream vera sans mono-medium-r-normal--15-120-72-72-m-120-iso10646-1")
+;; (setq ns-right-alternate-modifier nil)
+
+;; Colour theme
+(load-theme 'zenburn t)
+
+;; Font settings
+(set-frame-font "-apple-dejavu sans mono-medium-r-normal--0-0-0-0-m-0-mac-roman")
+(add-to-list 'default-frame-alist '(font . "-apple-dejavu sans mono-medium-r-normal--0-0-0-0-m-0-mac-roman"))
+
+;; Don't show the startup screen
+(setq inhibit-startup-screen t)
+
+;; No blinking cursor!
+(blink-cursor-mode 0)
+
+;; Set tab width to 4
+(setq-default indent-tabs-mode nil)
+(setq tab-width 4)
+
+;; No backup files, annoying
+(setq make-backup-files nil)
+
+;; Should I start using backups... (from jsfr)
+;; store all backup and autosave files in the tmp dir
+;; (setq
+;;  backup-by-copying t      ; don't clobber symlinks
+;;    backup-directory-alist
+;;    '(("." . "~/.saves"))    ; don't litter my fs tree
+;;    delete-old-versions t
+;;    kept-new-versions 6
+;;    kept-old-versions 2
+;;    version-control t)       ; use versioned backups
+;; (setq backup-directory-alist
+;;       `((".*" . ,"/home/jens/.emacs.d/backups")))
+;; (setq auto-save-file-name-transforms
+;;       `((".*" ,"/home/jens/.emacs.d/autosaves" t)))
+
+;; Turn on column numbering in status line
+(column-number-mode t)
+
+;; Disable the menu-bar
+(menu-bar-mode -1)
+
+;; Disable the scrollbar
+(scroll-bar-mode -1)
+
+;; Disable the toolbar
+(tool-bar-mode -1)
+
+; Don't use gtk dialogs, but use the minibuffer instead
+(setq use-dialog-box nil)
+
+;; Highlight current line
+(global-hl-line-mode 1)
+
+;; Set column size to 80
+(setq major-mode 'text-mode)
+(setq-default fill-column 80)
+(setq text-mode-hook 'turn-on-auto-fill)
+
+;; Show line numbers in the left side of the buffer.
+(require 'linum)
+(global-linum-mode 1)
+
 ;; ================================== Settings
 
-; require final newlines in files when they are saved
+;; Allow 'y' and 'p' instead of 'yes' and 'no'
+(defalias 'yes-or-no-p 'y-or-n-p)
+
+;; Require final newlines in files when they are saved
 (setq require-final-newline t)
 
 ;; Highlight lines longer than 80 chars
@@ -309,9 +323,10 @@ NAME the buffer to check against."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(current-language-environment "German")
  '(custom-safe-themes
    (quote
-    ("a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" default))))
+    ("2e5705ad7ee6cfd6ab5ce81e711c526ac22abed90b852ffaf0b316aa7864b11f" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" default))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
