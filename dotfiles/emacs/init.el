@@ -75,6 +75,7 @@
     flycheck
     ido-ubiquitous
     jedi
+    mic-paren
     org
     python-mode
     smart-mode-line
@@ -98,7 +99,7 @@
 ;;(set-face-background 'cursor "black")
 ;; (set-frame-font "-apple-dejavu sans mono-medium-r-normal--0-0-0-0-m-0-mac-roman")
 ;; (set-default-font "-apple-bitstream vera sans mono-medium-r-normal--15-120-72-72-m-120-iso10646-1")
-;; (setq ns-right-alternate-modifier nil)
+(setq ns-right-alternate-modifier nil)
 
 ;; Colour theme
 (load-theme 'zenburn t)
@@ -161,6 +162,11 @@
 ;; Show line numbers in the left side of the buffer.
 (require 'linum)
 (global-linum-mode 1)
+
+;; Show matching brackets
+(paren-activate)
+(setq paren-highlight-offscreen t)
+
 
 ;; ================================== Settings
 
