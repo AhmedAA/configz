@@ -75,6 +75,7 @@
     flycheck
     ido-ubiquitous
     jedi
+    material-theme
     mic-paren
     org
     python-mode
@@ -102,7 +103,8 @@
 (setq ns-right-alternate-modifier nil)
 
 ;; Colour theme
-(load-theme 'zenburn t)
+;;(load-theme 'zenburn t)
+(load-theme 'material-light t)
 
 ;; Font settings
 (set-frame-font "-apple-dejavu sans mono-medium-r-normal--0-0-0-0-m-0-mac-roman")
