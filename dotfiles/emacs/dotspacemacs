@@ -26,6 +26,7 @@
                       auto-completion-private-snippets-directory nil)
      emacs-lisp
      git
+     go
      org
      syntax-checking
      version-control
@@ -41,7 +42,8 @@
    ;; packages then consider to create a layer, you can also put the
    ;; configuration in `dotspacemacs/config'.
    dotspacemacs-additional-packages '(web-mode
-                                      company-anaconda)
+                                      company-anaconda
+                                      rvm)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -159,6 +161,13 @@ before layers configuration."
    )
   ;; User initialization goes here
   ;; My layers/packages
+  )
+
+(defun dotspacemacs/user-config ()
+  "Configuration function.
+ This function is called at the very end of Spacemacs initialization after
+layers configuration."
+
   ;; Mac specific crap
   (setq ns-right-alternate-modifier nil)
 
@@ -166,12 +175,18 @@ before layers configuration."
   (defun dotspacemacs/init ()
     (setq-default ruby-version-manager 'rvm)
     )
-  )
 
-(defun dotspacemacs/config ()
-  "Configuration function.
- This function is called at the very end of Spacemacs initialization after
-layers configuration."
+  ;; Don't use GTK dialogs, but use minibuffer/status instead
+  (setq use-dialog-box nil)
+
+  ;; Highlight lines longer than 80 chars
+  (setq whitespace-line-column 80) ;; limit line length
+  (setq whitespace-style '(face lines-tail))
+  (add-hook 'prog-mode-hook 'whitespace-mode)
+  (add-hook 'web-mode-hook 'whitespace-turn-off)
+
+  ;; Web mode
+  (setq web-mode-attr-indent-offset)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
