@@ -34,6 +34,8 @@ else
     SEGMENT_SEPARATOR=''
 fi
 
+SEGMENT_SEPARATOR_RIGHT='\ue0b2'
+
 # Begin a segment
 # Takes two arguments, background and foreground. Both can be omitted,
 # rendering default background/foreground.
@@ -46,6 +48,15 @@ prompt_segment() {
   else
     echo -n "%{$bg%}%{$fg%} "
   fi
+  CURRENT_BG=$1
+  [[ -n $3 ]] && echo -n $3
+}
+
+prompt_segment_right() {
+  local bg fg
+  [[ -n $1 ]] && bg="%K{$1}" || bg="%k"
+  [[ -n $2 ]] && fg="%F{$2}" || fg="%f"
+    echo -n "%K{$CURRENT_BG}%F{$1}$SEGMENT_SEPARATOR_RIGHT%{$bg%}%{$fg%} "
   CURRENT_BG=$1
   [[ -n $3 ]] && echo -n $3
 }
@@ -156,6 +167,10 @@ prompt_virtualenv() {
   fi
 }
 
+prompt_time() {
+  prompt_segment_right white black '%D{%H:%M:%S} '
+}
+
 # Status:
 # - was there an error
 # - am I root
@@ -182,4 +197,9 @@ build_prompt() {
   prompt_end
 }
 
+build_rprompt() {
+  prompt_time
+}
+
 PROMPT='%{%f%b%k%}$(build_prompt) '
+RPROMPT='%{%f%b%k%}$(build_rprompt)'
