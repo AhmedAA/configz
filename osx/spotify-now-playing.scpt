@@ -10,6 +10,9 @@ on run
         set what to name of current track
         set info to "“" & what & "”" & " by " & who
       end if
+      if player state is paused then
+        set info to "<paused>"
+      end if
     end tell
   end if
   return info
