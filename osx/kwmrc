@@ -33,9 +33,9 @@ kwmc config marked-border color FF006600
 kwmc config hotkeys enable
 
 # Set prefix for Kwms hotkeys
-kwmc config prefix ctrl-k
-kwmc config prefix-global disable
-kwmc config prefix-timeout 0.75
+#kwmc config prefix ctrl-k
+#kwmc config prefix-global disable
+#kwmc config prefix-timeout 0.75
 
 # Set focus-follows-mouse-mode to autoraise
 kwmc config focus autoraise
@@ -44,7 +44,7 @@ kwmc config focus autoraise
 kwmc config focus mouse-follows enable
 
 # Cycle focus through all screens
-kwmc config cycle-focus all
+kwmc config cycle-focus screen
 
 # Window can be made floating through drag&drop
 kwmc config dragndrop enable
@@ -108,7 +108,7 @@ kwmc bind cmd+alt+ctrl-l window -c expand 0.1
 kwmc bind cmd+alt+ctrl-f window -t fullscreen
 kwmc bind cmd+alt+ctrl-p window -t parent
 kwmc bind cmd+alt+ctrl-w window -t float
-kwmc bind cmd+alt+ctrl-return sys open -na /Applications/iTerm.app
+kwmc bind cmd+alt+ctrl-return sys open -na ~/Applications/iTerm.app
 
 kwmc bind ctrl+alt-m window -x
 kwmc bind ctrl+alt-p screen -m prev
