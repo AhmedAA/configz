@@ -29,39 +29,36 @@ kwmc config gap vertical 15
 kwmc config gap horizontal 15
 
 # Allow Kwm to tile windows
-kwmc config tiling enable
+kwmc config tiling on
 
 # Let Kwm listen for hotkeys
-kwmc config hotkeys enable
+kwmc config hotkeys on
 
 # Set prefix for Kwms hotkeys
 kwmc config prefix ctrl+alt-x
 
 # Prefix is not applied globally
-kwmc config prefix-global disable
+kwmc config prefix-global off
 
 # Time in seconds, before prefix must be re-activated
 kwmc config prefix-timeout 0.75
 
 # Automatically float windows that fail to resize
-kwmc config float-non-resizable enable
-
-# Window can be made floating through drag&drop
-kwmc config dragndrop enable
+kwmc config float-non-resizable on
 
 # Set focus-follows-mouse-mode to autoraise
 kwmc config focus autoraise
 
 # Focus-follows-mouse is temporarily disabled when
 # a floating window has focus
-kwmc config focus standby-on-float enable
+kwmc config focus standby-on-float on
 
 # The mouse will automatically move to the center
 # of the focused window
-kwmc config focus mouse-follows enable
+kwmc config focus mouse-follows on
 
 # Allow window focus to wrap-around
-kwmc config cycle-focus screen # all | disabled
+kwmc config cycle-focus screen
 
 # Default tiling mode for new spaces
 kwmc config space bsp
@@ -97,15 +94,20 @@ kwmc config float Pushbullet
 # the application can no longer be moved to other screens
 # kwmc config capture 1 iTunes
 
-# Enable border for focused
-kwmc config focused-border enable
+# Enable border for focused window
+kwmc config focused-border on
 kwmc config focused-border size 5
 kwmc config focused-border color FF006600
 
 # Enable border for marked window
-kwmc config marked-border enable
+kwmc config marked-border on
 kwmc config marked-border size 5
 kwmc config marked-border color FF006600
+
+# Change border color when prefix-key is active
+kwmc config prefix-border on
+kwmc config prefix-border size 5
+kwmc config prefix-border color FF458588
 
 ########  Default Keybinds ########
 
@@ -190,10 +192,10 @@ kwmc bind prefix+shift-x space -g decrease horizontal
 kwmc bind prefix+shift-y space -g decrease vertical
 
 # Increase Screen Padding
-kwmc bind prefix-leftarrow space -p increase left
-kwmc bind prefix-rightarrow space -p increase right
-kwmc bind prefix-uparrow space -p increase top
-kwmc bind prefix-downarrow space -p increase bottom
+kwmc bind prefix-left space -p increase left
+kwmc bind prefix-right space -p increase right
+kwmc bind prefix-up space -p increase top
+kwmc bind prefix-down space -p increase bottom
 
 # Decrease Screen Padding
 kwmc bind prefix+shift-leftarrow space -p decrease left
