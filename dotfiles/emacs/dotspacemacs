@@ -38,7 +38,6 @@
      javascript
      python
      ruby
-     scala
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -173,6 +172,9 @@ layers configuration."
 
   ;; Mac specific crap
   (setq ns-right-alternate-modifier nil)
+
+  ;; org stuff
+  (setq org-bullets-bullet-list '("▲" "▶" "■" "◆"))
 
   ;; Ruby stuffs
   (defun dotspacemacs/init ()
