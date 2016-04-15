@@ -5,9 +5,9 @@ render: (output) ->
 
 style: """
   top: 5px
-  right: 640px
+  left: 37%
   height: 20px
-  width: 13.3%
-  background-color: #171717
+  width: 12.5%
+  background-color: #009688
   z-index: -1
 """

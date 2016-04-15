@@ -1,14 +1,14 @@
-command: "date +\"%H:%M\""
+command: "ipconfig getifaddr en0"
 
 refreshFrequency: 10000 # ms
 
 render: (output) ->
-  "<i>◴</i> #{output}"
+  "wifi #{output} ❚"
 
 style: """
   -webkit-font-smoothing: antialiased
-  color: #458588
+  color: #FFFFFF
   font: 11px Osaka-Mono
-  right: 460px
-  top: 7px
+  left: 37.5%
+  top: 9px
 """

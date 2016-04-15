@@ -7,7 +7,7 @@ render: (output) ->
 
 style: """
   -webkit-font-smoothing: antialiased
-  color: #D6E7EE
+  color: #FFFFFF
   font: 11px Osaka-Mono
   height: 16px
   left: 6px
