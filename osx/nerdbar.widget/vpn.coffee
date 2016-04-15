@@ -13,14 +13,14 @@ echo "$info"
 """
 
 render: (output) ->
-  "<i>✓ VPN: </i>#{output}"
+  "VPN #{output}"
 
 refreshFrequency: 50000 # ms
 
 style: """
   -webkit-font-smoothing: antialiased
   font: 10px Osaka-Mono
-  top: 7px
+  top: 9px
   left: 44.4%
   color: #FFFFFF
 """
