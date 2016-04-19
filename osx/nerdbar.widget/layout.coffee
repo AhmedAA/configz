@@ -10,7 +10,7 @@ style: """
   color: #FFFFFF
   font: 11px Osaka-Mono
   height: 16px
-  left: 6px
+  left: 17px
   overflow: hidden
   text-overflow: ellipsis
   top: 9px
