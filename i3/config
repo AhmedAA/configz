@@ -44,6 +44,8 @@ bindsym $mod+Shift+Q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run -sb darkgreen
+#bindsym $mod+d exec rofi -show run
+#bindsym $mod+t exec rofi -show window
 
 # change focus
 bindsym $mod+j focus left

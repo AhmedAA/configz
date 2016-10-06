@@ -1,5 +1,3 @@
-urxvt*iconFile: /usr/share/icons/Faenza/apps/scalable/gnome-terminal.svg
-
 URxvt*foreground: #eeeeee
 URxvt*background: #000000
 URxvt*scrollBar: false
@@ -7,23 +5,22 @@ URxvt*transparent: true
 URxvt*shading: 30
 !urxvt*font: xft:UnTaza:pixelsize=10
 !URxvt*font: xft:Terminus-Regular:pixelsize=10
-URxvt*font: xft:Termsynu:pixelsize=9,xft:Inconsolata\ for\ Powerline:pixelsize=9 
+URxvt*font: xft:Input:pixelsize=12
 URxvt*saveLines: 10000
 
-!!!!!!!!!!!!!!! MOC !!!!!!!!!!!!!!!!!!!!!!!!!
-!moc*foreground: #eeeeee
-!moc*background: #000000
-!moc*scrollBar: false
-!moc*transparent: true
-!moc*shading: 30
-!urxvt*font: xft:UnTaza:pixelsize=10
-!moc*font: xft:Terminus-Regular:pixelsize=10
-!moc*saveLines: 10000
-!!!!!!!!!!!!!!! MOC !!!!!!!!!!!!!!!!!!!!!!!!!
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.font: Input 12
+rofi.color-window: #353535, #353535
+rofi.color-normal: #353535, #F0DFAF, #353535, #4F4F4F, #7F9F7F
+rofi.color-active: #688060, #2E3330, #353535, #4F4F4F, #7F9F7F
+rofi.color-urgent: #E89393, #2E3330, #353535, #4F4F4F, #7F9F7F
+
 
 ! True transparency
-!urxvt*background: rgba:1111/1111/1111/dddd
-!urxvt*depth: 32
+urxvt*background: rgba:1111/1111/1111/dddd
+urxvt*depth: 32
 
 ! Normal
 ! blue
@@ -42,4 +39,4 @@ Xft.antialias: 1
 Xft.rgba: rgb
 
 !Emacs
-Emacs.font: Termsynu-9
+!Emacs.font: Terminus-Regular-10
