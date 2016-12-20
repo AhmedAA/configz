@@ -5,5 +5,6 @@ xrdb -merge ~/.Xresources
 redshift -l 55.7:12.6 -t 5700:3600 -g 0.8 -m randr -v &
 dunst -config /home/ahmed/.config/dunstrc &
 sh /home/ahmed/.config/wallpaper.sh &
+xautolock -detectsleep -time 3 -locker 'i3lock -i /home/ahmed/pics/walls/1371331446698.png' -notify 30 -notifier \"notify-send -t 2000 'Locking screen in 30 seconds'\" &
 
 exec i3
