@@ -19,8 +19,8 @@ rofi.color-urgent: #E89393, #2E3330, #353535, #4F4F4F, #7F9F7F
 
 
 ! True transparency
-urxvt*background: rgba:1111/1111/1111/dddd
-urxvt*depth: 32
+!urxvt*background: rgba:1111/1111/1111/dddd
+!urxvt*depth: 32
 
 ! Normal
 ! blue

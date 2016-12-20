@@ -1,61 +1,9 @@
-#!/bin/zsh
+setxkbmap us altgr-intl
 
-# Set default browser to firefox
-export BROWSER="firefox"
+xrdb -merge ~/.Xresources
 
-# Set editor to vim
-export EDITOR="emacs -nw"
-
-# java fix
-#wmname LG3D &
-
-# Merge xresources
-xrdb -merge /home/ahmed/.Xresources
-
-# Set danish keyboard layout
-#setxkbmap -layout dk
-
-# Set x cursor to something more... Appropriate
-xsetroot -cursor_name left_ptr
-
-# Let Canto refresh it's feeds (NOTE: Doesn't need an ampersand, the command
-# is a daemon itself)
-#canto-fetch -b
-
-# Start Emacs as a daemon (NOTE: Doesn't need an ampersand, the command is a
-# daemon itself)
-#emacs --daemon
-
-# gpg-agent
-eval $(gpg-agent --daemon) &
-
-# unclutter to hide the cursor
-unclutter -idle 2 -noevents &
-
-# Start xcompmgr
-xcompmgr -c &
-
-# Conky
-#conky -c /home/ahmed/.config/conky/conkyrc &
-
-# Start the Dropbox daemon
-#/usr/bin/dropboxd &
-
-# Uses feh to set the background
+redshift -l 55.7:12.6 -t 5700:3600 -g 0.8 -m randr -v &
+dunst -config /home/ahmed/.config/dunstrc &
 sh /home/ahmed/.config/wallpaper.sh &
 
-# Auto lock the screen after n minutes
-# For a solid black background i3lock -c 000000
-xautolock -time 10 -locker 'i3lock -i /home/ahmed/Pictures/wp/033.png -d' &
-
-# Start the window manager
-exec subtle
-
-#case $1 in
-#subtle)
-#	exec subtle
-#	;;
-#i3)
-#	exec i3
-#	;;
-#esac
+exec i3
