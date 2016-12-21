@@ -254,7 +254,7 @@ bindsym $mod+mod1+p exec --no-startup-id playerctl previous
 #exec --no-startup-id "/usr/bin/redshift-cph"
 
 # lock screen
-bindsym $mod+Escape exec --no-startup-id i3lock -i /home/ahmed/pics/walls/1371331446698.png
+bindsym $mod+Escape exec --no-startup-id i3lock -i /home/ahmed/pics/walls/1371331446698.png -t
 
 # scratchpad
 bindsym $mod+Shift+minus move scratchpad
