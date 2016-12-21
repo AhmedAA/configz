@@ -16,7 +16,9 @@ rofi.color-window: #353535, #353535
 rofi.color-normal: #353535, #F0DFAF, #353535, #4F4F4F, #7F9F7F
 rofi.color-active: #688060, #2E3330, #353535, #4F4F4F, #7F9F7F
 rofi.color-urgent: #E89393, #2E3330, #353535, #4F4F4F, #7F9F7F
-
+rofi.modi: drun,run,window
+rofi.display-drun: >
+rofi.display-run: >
 
 ! True transparency
 !urxvt*background: rgba:1111/1111/1111/dddd
