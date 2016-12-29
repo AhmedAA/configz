@@ -229,6 +229,15 @@ bindsym $mod+Shift+e mode "(L)ogout, (R)eboot, (P)oweroff, (S)uspend"
 #}
 #bindsym $mod+ctrl+k mode "Kill all Qubes, (y)es/(n)o"
 
+# Keyboard layout switching mode
+mode "Layout: (A)rabic, (E)nglish" {
+	bindcode $mod+38 mode "default"; exec --no-startup-id setxkbmap ara buckwalter
+	bindcode $mod+26 mode "default"; exec --no-startup-id setxkbmap us altgr-intl
+
+	bindsym Escape mode "default"
+}
+bindcode $mod+ctrl+46 mode "Layout: (A)rabic, (E)nglish"
+
 # Volume up
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 2dB+ unmute -c 1
 
