@@ -169,10 +169,10 @@ bindsym $mod+ctrl+r mode "resize"
 bar {
         position top
         status_command i3status
-	strip_workspace_numbers yes
+        strip_workspace_numbers yes
         colors {
             background #3f3f3f
-            statusline #dcdccc
+            statusline #ffd7a7
 
             #class               #border #backgr #text
             focused_workspace    #93b3a3 #3f3f3f #93b3a3
