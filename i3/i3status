@@ -42,6 +42,7 @@ ethernet _first_ {
 
 battery 0 {
         format = "%status %percentage %remaining"
+        path = "/sys/class/power_supply/BAT%d/uevent"
         status_bat = ""
         status_chr = ""
         status_full = ""
