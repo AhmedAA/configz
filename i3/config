@@ -287,6 +287,9 @@ exec --no-startup-id /usr/bin/compton -bG --config $HOME/.i3/compton.conf
 # unclutter (hide cursor)
 exec --no-startup-id unclutter -idle 2 -noevents
 
+# dual battery info
+exec --no-startup-id sh /home/ahmed/.config/i3status/battery-info
+
 # Use a screen locker
 #exec --no-startup-id "xautolock -detectsleep -time 3 -locker 'i3lock -i /home/ahmed/pics/walls/1371331446698.png' -notify 30 -notifier \"notify-send -t 2000 'Locking screen in 30 seconds'\""
 
