@@ -1,24 +1,50 @@
-URxvt*foreground: #eeeeee
-URxvt*background: #000000
+!URxvt*foreground: #eeeeee
+!URxvt*background: #000000
 URxvt*scrollBar: false
-URxvt*transparent: true
-URxvt*shading: 30
+!URxvt*transparent: true
+!URxvt*shading: 30
 !urxvt*font: xft:UnTaza:pixelsize=10
 !URxvt*font: xft:Terminus-Regular:pixelsize=10
 URxvt*font: xft:Input:pixelsize=12
-URxvt*saveLines: 10000
+URxvt*saveLines: 1000000
+URxvt*urgentOnBell: true
+
+! Urxvt colour theme
+URxvt*termName: rxvt-256color
+URxvt*xftAntialias: true
+URxvt*background: #3f3f3f
+URxvt*foreground: #dcdccc
+URxvt*cursorColor: #aaaaaa
+URxvt*colorUL: #366060
+URxvt*underlineColor: #dfaf8f
+URxvt*color0: #3f3f3f
+URxvt*color1: #cc9393
+URxvt*color2: #7f9f7f
+URxvt*color3: #d0bf8f
+URxvt*color4: #6ca0a3
+URxvt*color5: #dc8cc3
+URxvt*color6: #93e0e3
+URxvt*color7: #dcdccc
+URxvt*color8: #000000
+URxvt*color9: #dca3a3
+URxvt*color10: #bfebbf
+URxvt*color11: #f0dfaf
+URxvt*color12: #8cd0d3
+URxvt*color13: #dc8cc3
+URxvt*color14: #93e0e3
+URxvt*color15: #ffffff
 
 ! ------------------------------------------------------------------------------
 ! ROFI Color theme
 ! ------------------------------------------------------------------------------
-rofi.font: Input 12
+rofi.font: Input,Awesome 12
 rofi.color-window: #353535, #353535
 rofi.color-normal: #353535, #F0DFAF, #353535, #4F4F4F, #7F9F7F
 rofi.color-active: #688060, #2E3330, #353535, #4F4F4F, #7F9F7F
 rofi.color-urgent: #E89393, #2E3330, #353535, #4F4F4F, #7F9F7F
 rofi.modi: drun,run,window
-rofi.display-drun: >
-rofi.display-run: >
+rofi.display-drun: |>
+rofi.display-run: |>
 
 ! True transparency
 !urxvt*background: rgba:1111/1111/1111/dddd
@@ -26,11 +52,11 @@ rofi.display-run: >
 
 ! Normal
 ! blue
-URxvt*color4:    #2255ff
+!URxvt*color4:    #2255ff
 
 ! Light
 ! blue
-URxvt*color12:    #2255ff
+!URxvt*color12:    #2255ff
 
 !Antialiasing
 Xft.autohint: 0
