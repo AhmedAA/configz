@@ -295,3 +295,4 @@ exec --no-startup-id sh /home/ahmed/.config/i3status/battery-info
 
 # program rules
 for_window [class="Thunderbird" instance="Msgcompose"] floating enable
+for_window [class="Emacs" instance="mail"] floating enable
