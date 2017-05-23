@@ -16,10 +16,6 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/home/user/go/bin"
-export GOPATH="/home/user/go"
-export JAVA_HOME="/usr/lib/jvm/default/"
-
 # alias
 alias c='clear'
 alias ..='cd ..'
@@ -38,6 +34,10 @@ alias aupdate='apacman -Syy'
 alias aupgrade='apacman -Su'
 
 alias nukepkg='sudo pacman -Rns $(pacman -Qtdq)'
+
+## netctl commands
+alias con-stop='sudo netctl stop-all'
+alias con-start='sudo netctl start'
 
 ## git
 alias gitstatus='find . -type d -name ".git" | while read dir ; do sh -c "cd $dir/../ && git status -s | grep 

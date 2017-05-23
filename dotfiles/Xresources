@@ -1,8 +1,8 @@
 !URxvt*foreground: #eeeeee
-!URxvt*background: #000000
+URxvt*background: #000000
 URxvt*scrollBar: false
-!URxvt*transparent: true
-!URxvt*shading: 30
+URxvt*transparent: true
+URxvt*shading: 30
 !urxvt*font: xft:UnTaza:pixelsize=10
 !URxvt*font: xft:Terminus-Regular:pixelsize=10
 URxvt*font: xft:Input:pixelsize=12
@@ -12,7 +12,7 @@ URxvt*urgentOnBell: true
 ! Urxvt colour theme
 URxvt*termName: rxvt-256color
 URxvt*xftAntialias: true
-URxvt*background: #3f3f3f
+!URxvt*background: #3f3f3f
 URxvt*foreground: #dcdccc
 URxvt*cursorColor: #aaaaaa
 URxvt*colorUL: #366060

@@ -1,0 +1,7 @@
+export GOPATH="/home/ahmed/go"
+export JAVA_HOME="/usr/lib/jvm/default/"
+
+typeset -U path
+path=(/usr/bin /bin /usr/sbin /sbin /usr/local/bin $GOPATH/bin $path[@])
+
+startx
