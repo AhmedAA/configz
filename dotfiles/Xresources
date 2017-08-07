@@ -50,14 +50,6 @@ rofi.display-run: |>
 !urxvt*background: rgba:1111/1111/1111/dddd
 !urxvt*depth: 32
 
-! Normal
-! blue
-!URxvt*color4:    #2255ff
-
-! Light
-! blue
-!URxvt*color12:    #2255ff
-
 !Antialiasing
 Xft.autohint: 0
 Xft.lcdfilter: lcddefault
@@ -65,6 +57,3 @@ Xft.hintstyle: hintfull
 Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
-
-!Emacs
-!Emacs.font: Terminus-Regular-10
