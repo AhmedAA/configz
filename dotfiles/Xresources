@@ -1,5 +1,5 @@
 !URxvt*foreground: #eeeeee
-URxvt*background: #000000
+!URxvt*background: #000000
 URxvt*scrollBar: false
 URxvt*transparent: true
 URxvt*shading: 30
@@ -12,7 +12,7 @@ URxvt*urgentOnBell: true
 ! Urxvt colour theme
 URxvt*termName: rxvt-256color
 URxvt*xftAntialias: true
-!URxvt*background: #3f3f3f
+URxvt*background: #3f3f3f
 URxvt*foreground: #dcdccc
 URxvt*cursorColor: #aaaaaa
 URxvt*colorUL: #366060
@@ -37,7 +37,7 @@ URxvt*color15: #ffffff
 ! ------------------------------------------------------------------------------
 ! ROFI Color theme
 ! ------------------------------------------------------------------------------
-rofi.font: Input,Awesome 12
+rofi.font: Input,FontAwesome 12
 rofi.color-window: #353535, #353535
 rofi.color-normal: #353535, #F0DFAF, #353535, #4F4F4F, #7F9F7F
 rofi.color-active: #688060, #2E3330, #353535, #4F4F4F, #7F9F7F
