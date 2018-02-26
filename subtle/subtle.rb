@@ -131,7 +131,7 @@ style :all do
   background    "#333333"
   icon          "#3f3f3f"
   padding       3, 3, 3, 3
-  font          "xft:termsynu:pixelsize=9"
+  font          "xft:input:pixelsize=10"
 end
 
 # Style for the all views
