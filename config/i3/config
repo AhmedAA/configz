@@ -33,7 +33,7 @@ floating_modifier $mod
 #for_window [class="[.]*"] floating enable
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec termite
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -219,8 +219,8 @@ bindsym Print mode "Capture (S)creen or (W)indow"
 # Power management mode
 mode "(L)ogout, (R)eboot, (P)oweroff, (S)uspend" {
 	bindsym l mode "default"; exec --no-startup-id i3 exit
-	bindsym r mode "default"; exec --no-startup-id reboot
-	bindsym p mode "default"; exec --no-startup-id poweroff
+	bindsym r mode "default"; exec --no-startup-id systemctl reboot
+	bindsym p mode "default"; exec --no-startup-id systemctl poweroff
 	bindsym s mode "default"; exec --no-startup-id systemctl suspend
 
 	# back to normal
@@ -268,11 +268,8 @@ bindsym $mod+mod1+p exec --no-startup-id playerctl previous
 # set keyboard layout
 #exec --no-startup-id "setxkbmap us altgr-intl"
 
-# start redshift with copenhagen coordinates
-#exec --no-startup-id "/usr/bin/redshift-cph"
-
 # lock screen
-bindsym $mod+Escape exec --no-startup-id i3lock -i /home/ahmed/pics/walls/1371331446698.png -t
+bindsym $mod+Escape exec --no-startup-id i3lock -i $HOME/pics/walls/1371331446698.png -t
 
 # scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -286,18 +283,12 @@ exec --no-startup-id xinput set-prop 'TPPS/2 IBM TrackPoint' 'Evdev Wheel Emulat
 exec --no-startup-id xinput set-prop 'TPPS/2 IBM TrackPoint' 'Evdev Wheel Emulation Timeout' 200
 exec --no-startup-id xinput set-prop 'TPPS/2 IBM TrackPoint' 'Evdev Wheel Emulation Axes' 6 7 4 5
 
-# compton
-#exec --no-startup-id /usr/bin/compton -bG --config /home/aaa/.config/compton.conf
-
-# unclutter (hide cursor)
-#exec --no-startup-id unclutter -idle 2 -noevents
+# status stuff
+bindsym $mod+q exec --no-startup-id $HOME/.config/eventd/scripts/status
+bindsym Control+space exec --no-startup-id eventdctl nd dismiss oldest default
 
 # dual battery info
 #exec --no-startup-id sh /home/ahmed/.config/i3status/battery-info
 
 # Use a screen locker
-#exec --no-startup-id "xautolock -detectsleep -time 3 -locker 'i3lock -i /home/ahmed/pics/walls/1371331446698.png' -notify 30 -notifier \"notify-send -t 2000 'Locking screen in 30 seconds'\""
-
-# program rules
-for_window [class="Thunderbird" instance="Msgcompose"] floating enable
-for_window [class="Emacs" instance="mail"] floating enable
+#exec --no-startup-id "xautolock -detectsleep -time 3 -locker 'i3lock -i $HOME/pics/walls/1371331446698.png' -notify 30 -notifier \"notify-send -t 2000 'Locking screen in 30 seconds'\""

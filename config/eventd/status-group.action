@@ -1,0 +1,8 @@
+[File]
+Extends=status-normal.action
+
+[Action]
+Name=status-group
+
+[NotificationBubble]
+Queue=topleft

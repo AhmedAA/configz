@@ -1,0 +1,25 @@
+[Plugins]
+Output=evp
+Input=time;upower;nl;
+
+[Time]
+Zones = Europe/Copenhagen;UTC;
+Formats = %H:%M;%F (%-V);
+
+[Netlink]
+Interfaces=enp0s31f6;wlp3s0;
+
+[Netlink Formats]
+Up=Down${aps/^.+$/ (\0 APs)}
+Down=Down
+UpWiFi=${addresses} ${ssid/^.+$/at \0}
+DownWiFi=Down${aps/^.+$/ (\0 APs)}
+LabelColour=#FFF
+
+[Override nl-ether:enp0s31f6]
+LabelColour=#FFF
+Label=
+
+[Override nl-ether:wlp3s0]
+LabelColour=#FFF
+Label=

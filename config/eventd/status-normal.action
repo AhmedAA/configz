@@ -1,0 +1,5 @@
+[Action]
+Name=status-normal
+
+[Notification]
+Text=<span foreground='${state-colour:-#fff}' font='Wuncon Siji 10px'>${label/$/}${value/.+$}</span>

@@ -1,0 +1,33 @@
+#!/bin/bash
+
+VPN_ICON=''
+
+VPN_COLOR_URGENT='RRR'
+VPN_COLOR_CONNECTED='7E4'
+VPN_COLOR_DISCONNECTED='E44'
+
+VPN_UUID=$(uuidgen)
+
+status_vpn(){
+	if systemctl is-active openvpn-client@home >/dev/null 2>&1; then
+		markup $VPN_ICON 'Home' $VPN_COLOR_CONNECTED
+		return
+	fi
+
+	if pidof openconnect >/dev/null 2>&1; then
+		markup $VPN_ICON 'NTNU' $VPN_COLOR_CONNECTED
+		return
+	fi
+
+	markup $VPN_ICON 'None' $VPN_COLOR_URGENT
+}
+
+watch_vpn(){
+	journalctl -fu systemd-networkd | while read -r _; do
+		status=$(status_vpn)
+		if [[ -n "$status" && "$status" != "$vpn_last_status" ]]; then
+			popup "${status//#RRR/#$VPN_COLOR_DISCONNECTED}" "$VPN_UUID"
+			vpn_last_status="$status"
+		fi
+	done
+}
