@@ -1,8 +1,0 @@
-[File]
-Extends=daemon-normal.action
-
-[Action]
-Name=daemon-group
-
-[NotificationBubble]
-Queue=default
