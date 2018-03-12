@@ -1,0 +1,7 @@
+[Event j4status]
+Actions=daemon-normal;
+
+# Assumes that Queue=topleft has Spacing=0 to look as there is only one notification
+[Event j4status * daemon]
+IfFlags=j4status-daemon;
+Actions=daemon-group;

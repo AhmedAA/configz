@@ -1,10 +1,6 @@
 [Plugins]
 Output=evp
-Input=time;upower;nl;
-
-[Time]
-Zones = Europe/Copenhagen;UTC;
-Formats = %H:%M;%F (%-V);
+Input=pulseaudio;nl;
 
 [Netlink]
 Interfaces=enp0s31f6;wlp3s0;
