@@ -3,5 +3,5 @@ Actions=status-normal;
 
 # Assumes that Queue=topleft has Spacing=0 to look as there is only one notification
 [Event j4status * grouped]
-IfFlags=j4status-grouped;
+OnlyIfFlags=j4status-grouped;
 Actions=status-group;

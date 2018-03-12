@@ -3,14 +3,12 @@
 URxvt*scrollBar: false
 URxvt*transparent: true
 URxvt*shading: 30
-!urxvt*font: xft:UnTaza:pixelsize=10
-!URxvt*font: xft:Terminus-Regular:pixelsize=10
-URxvt*font: xft:Input:pixelsize=12
+URxvt*font: xft:FantasqueSansMono:pixelsize=11
 URxvt*saveLines: 1000000
 URxvt*urgentOnBell: true
 
 ! Urxvt colour theme
-URxvt*termName: rxvt-256color
+URxvt*termName: rxvt-unicode-256color
 URxvt*xftAntialias: true
 URxvt*background: #3f3f3f
 URxvt*foreground: #dcdccc
@@ -34,10 +32,20 @@ URxvt*color13: #dc8cc3
 URxvt*color14: #93e0e3
 URxvt*color15: #ffffff
 
+URxvt.lineSpace           : 0
+URxvt.letterSpace         : 1
+URxvt.scrollBar           : false
+URxvt.internalBorder      : 34
+URxvt.cursorUnderline     : false
+URxvt.geometry            : 70x35
+URxvt.thickness           : 5
+URxvt.titleBar            : false
+URxvt.intensityStyles     : false
+
 ! ------------------------------------------------------------------------------
 ! ROFI Color theme
 ! ------------------------------------------------------------------------------
-rofi.font: Input,FontAwesome 12
+rofi.font: FantasqueSansMono,FontAwesome5Free 12
 rofi.color-window: #353535, #353535
 rofi.color-normal: #353535, #F0DFAF, #353535, #4F4F4F, #7F9F7F
 rofi.color-active: #688060, #2E3330, #353535, #4F4F4F, #7F9F7F

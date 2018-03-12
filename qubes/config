@@ -160,6 +160,14 @@ bar {
         }
 }
 
+# Kill all Qubes
+#mode "Kill all Qubes, (y)es/(n)o" {
+#	bindsym y mode "default"; exec --no-startup-id qvm-shutdown --all
+#	bindsym n mode "default"
+#	bindsym Escape mode "default"
+#}
+#bindsym $mod+ctrl+k mode "Kill all Qubes, (y)es/(n)o"
+
 # Use a screen locker
 exec --no-startup-id "xautolock -detectsleep -time 3 -locker 'i3lock -d -c 000000' -notify 30 -notifier \"notify-send -t 2000 'Locking screen in 30 seconds'\""
 

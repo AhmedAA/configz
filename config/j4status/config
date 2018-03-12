@@ -4,7 +4,7 @@ Input=time;upower;nl;
 
 [Time]
 Zones = Europe/Copenhagen;UTC;
-Formats = %H:%M;%F (%-V);
+Formats = %H:%M; %F (%-V);
 
 [Netlink]
 Interfaces=enp0s31f6;wlp3s0;
