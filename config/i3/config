@@ -92,31 +92,37 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
-# resize window (you can also use the mouse for that)
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+mode "rearrange" {
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
+
+        # greater sizes
+        bindsym Mod1+Left resize shrink width 30 px or 30 ppt
+        bindsym Mod1+Down resize grow height 30 px or 30 ppt
+        bindsym Mod1+Up resize shrink height 30 px or 30 ppt
+        bindsym Mod1+Right resize grow width 30 px or 30 ppt
+
+        # EVEN GREATER SIZES !!11
+        bindsym Mod1+Shift+Left resize shrink width 50 px or 50 ppt
+        bindsym Mod1+Shift+Down resize grow height 50 px or 50 ppt
+        bindsym Mod1+Shift+Up resize shrink height 50 px or 50 ppt
+        bindsym Mod1+Shift+Right resize grow width 50 px or 50 ppt
+
+        # move
+        bindsym Shift+Left move left 30 px
+        bindsym Shift+Down move down 30 px
+        bindsym Shift+Up move up 30 px
+        bindsym Shift+Right move right 30 px
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
 
-bindsym $mod+ctrl+r mode "resize"
+bindsym $mod+ctrl+r mode "rearrange"
 
 bar {
         position top
