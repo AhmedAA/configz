@@ -1,6 +1,6 @@
 set $mod Mod4
 
-font pango:FantasqueSansMono,FontAwesome5Free 10
+font pango:FantasqueSansMono 10
 
 floating_modifier $mod
 
