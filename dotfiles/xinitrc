@@ -6,12 +6,14 @@ xrdb -merge ~/.Xresources
 xsetroot -cursor_name left_ptr
 
 redshift -l 55.7:12.6 -t 5700:3600 -g 0.8 -m randr -v &
+nm-applet &
 # make sure eventd has a display
 eventdctl nd switch xcb $DISPLAY
 # status daemon
 # j4status -c $HOME/.config/j4status/daemon &
 compton -bG --config $HOME/.config/compton.conf &
 feh --bg-scale $HOME/pics/walls/09\ -\ ahAcx7s.jpg &
+#unclutter -grab -idle 2 &
 
 #dunst -config $HOME/.config/dunstrc &
 #sh $HOME/.config/wallpaper.sh &
